@@ -2,7 +2,7 @@
 
 @import "compass/layout.scss";
 
-                                              @include sticky-footer(88px, "#main", "#main-footer", "#footer");
+@include sticky-footer(88px, "#main", "#main-footer", "#footer");
 
 @import "index";
 @import "registration";
@@ -18,13 +18,13 @@ $bootstrap-sass-asset-helper: false;
 
 /* uncomment for bourbon and neat */
 /* http://bourbon.io/docs/ */
-@import 'bourbon/bourbon';
-@import 'base/base';
-/* http://neat.bourbon.io/docs/ */
-@import 'neat/neat';
+/* @import 'bourbon/bourbon'; */
+/* @import 'base/base'; */
+/* /\* http://neat.bourbon.io/docs/ *\/ */
+/* @import 'neat/neat'; */
 
-/* comment to turn off grid */
-$visual-grid: true;
+/* /\* comment to turn off grid *\/ */
+/* $visual-grid: true; */
 
 /* div.container { */
 /*   @include outer-container; */

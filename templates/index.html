@@ -52,6 +52,7 @@ Nutrifeedback
 
       </br>
       <div class="doit">
+      <div class="row">
       <div class="mission-box">
         <p class="section-title">Our Mission</p>
 
@@ -65,12 +66,16 @@ Nutrifeedback
 
         <div class="shrink">
         <div class="row">
-          <div class="col-md-8"><img class="mission-photo photo-one" src='{% static 'img/home_fruit.png' %}'/>
-            <div class="col-md-6"><img class="mission-photo photo-two" src='{% static 'img/home_bread.png' %}'/></div>
-            <div class="col-md-6"><img class="mission-photo photo-three" src='{% static 'img/home_soup.png' %}'/></div>
+          <div class="col-md-8 photo-one">
+            <div class="row">
+              <img class="mission-photo col-md-12" src='{% static 'img/home_fruit.png' %}'/>
+            </div>
+            <div class="row">
+              <div class="col-md-6 photo-two"><img class="mission-photo" src='{% static 'img/home_bread.png' %}'/></div>
+              <div class="col-md-6 photo-three"><img class="mission-photo" src='{% static 'img/home_soup.png' %}'/></div>
+            </div>
           </div>
-
-          <div class="col-md-4"><img class="mission-photo photo-four" src='{% static 'img/home_tea.png' %}'/></div>
+          <div class="col-md-4 photo-four"><img class="mission-photo" src='{% static 'img/home_tea.png' %}'/></div>
         </div>
       </div>
       </div>
@@ -80,6 +85,7 @@ Nutrifeedback
           <div class="col-md-10"><p class="tagline">Get the advice your body needs. Ask your ﬁrst question today.</p></div>
           <div class="col-md-1"><button type="button" class="btn btn-primary tagline-button">Start Now</button></div>
         </div>
+      </div>
       </div>
 
       <div class="row">

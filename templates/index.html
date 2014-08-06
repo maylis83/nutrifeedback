@@ -1,13 +1,137 @@
 {% extends "base.html" %}
 
 {% block title %}
-Lightmatter Base Install
+Nutrifeedback
 {% endblock title %}
-
 
 {% block content %}
 {% load static from staticfiles %}
 <h1>Go forth and build...</h1>
-<img src='{% static 'img/lightmatter-medium.png' %}'/>
+
+ <div class="container">
+
+      <div class="page-header">
+      </div>
+
+      <div class="row">
+        <div class="col-md-1"><img class="logo" src='{% static 'img/home_logo.png' %}'/></div>
+        <div class="col-md-9"></div>
+        <div class="col-md-1"><button type="button" class="btn btn-success">Sign In</button></div>
+        <div class="col-md-1"><button type="button" class="btn btn-primary">Start</button></div>
+      </div>
+
+      <div>
+        <p class="slogan">Healthy Advice, Healthy Body.</p>
+        <p class="slogan-detail">Get unlimited access to the best local nutritionists and unbelievable discounts on in-person nutritional consultations.</p>
+        <p class="slogan-detail"> Nutrifeedback makes your health goals clear, simple, and attainable.</p>
+      </div>
+
+      <center><button type="button" class="btn btn-primary">Get Started</button></center>
+
+      <br>
+      <p class="section-title">How Nutrifeedback Works</p>
+
+      <div class="row">
+        <div class="col-md-2"><img src='{% static 'img/home_set_goals.png' %}'/>
+          <p class="step">Get Connected</p>
+          <p class="step-desc">Find the qualiﬁed, licensed local nutritionist who’s right for you.</p>
+        </div>
+        <div class="col-md-3"><img class="dotted" src='{% static 'img/home_dotted.png' %}'/></div>
+        <div class="col-md-2"><img src='{% static 'img/home_find.png' %}'/>
+          <p class="step">Get Together</p>
+          <p class="step-desc">Meet with your nutritionist to check up on your progress—for less than half the standard fee.</p>
+        </div>
+        <div class="col-md-3"><img class="dotted" src='{% static 'img/home_dotted.png' %}'/></div>
+        <div class="col-md-2"><img src='{% static 'img/home_connect.png' %}'/>
+          <p class="step">Get Talking</p>
+          <p class="step-desc">Discuss your health goals and create a plan. Get your health questions answered in 48 hours or less.</p>
+        </div>
+      </div>
+
+      <center><button type="button" class="btn btn-primary">Start Now</button></center>
+
+      </br>
+      <div class="doit">
+      <div class="mission-box">
+        <p class="section-title">Our Mission</p>
+
+        <p class="mission-text">There’s more information about nutrients and our bodies available than ever before, so being
+        healthy should be easy, right? Unfortunately not. It’s hard to know where to begin, what to
+        believe, and how to ﬁnd the time to read through all the studies, charts, and articles. So, by
+        connecting people who truly care about their health (like you) with trusted nutritionists who love
+        treating their clients as individuals, Nutrifeedback hopes to help millions of people live healthier,
+        happier lives. You deserve to feel better than ever. And with the right nutritional advice for your
+        body, goals, and lifestyle, we think you will.</p>
+
+        <div class="shrink">
+        <div class="row">
+          <div class="col-md-8"><img class="mission-photo photo-one" src='{% static 'img/home_fruit.png' %}'/>
+            <div class="col-md-6"><img class="mission-photo photo-two" src='{% static 'img/home_bread.png' %}'/></div>
+            <div class="col-md-6"><img class="mission-photo photo-three" src='{% static 'img/home_soup.png' %}'/></div>
+          </div>
+
+          <div class="col-md-4"><img class="mission-photo photo-four" src='{% static 'img/home_tea.png' %}'/></div>
+        </div>
+      </div>
+      </div>
+
+      <div class="row">
+        <div class="tagline-box">
+          <div class="col-md-10"><p class="tagline">Get the advice your body needs. Ask your ﬁrst question today.</p></div>
+          <div class="col-md-1"><button type="button" class="btn btn-primary tagline-button">Start Now</button></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-10"></div>
+        <div class="col-md-2">
+          <div class="col-md-3"><img class="icon" src='{% static 'img/twitter_icon.png' %}'/></div>
+          <div class="col-md-3"><img class="icon" src='{% static 'img/facebook_icon.png' %}'/></div>
+          <div class="col-md-3"><img class="icon" src='{% static 'img/pinterest_icon.png' %}'/></div>
+          <div class="col-md-3"><img class="icon" src='{% static 'img/instagram_icon.png' %}'/></div>
+       </div>
+     </div>
+     </div>
+</div>
+
+
+
+<!--
+Food For Thought
+
+The key to great health is great advice. That's why Nutrifeedback connects you with licensed
+local nutritionists who can provide personalized recommendations to help you achieve your
+unique health, weight, or dietary goals.
+ For just $9.99 per month, here’s what you’ll get from Nutrifeedback:
+ • Answers. Receive responses to all your health questions within 48 hours.
+• Savings. Pay just $50 for $120 nutritional consultations.
+• Experts. Gain easy access to the best nutritionists near you.
+• Personalization. Enjoy one-on-one attention and health plans tailored to your personal
+goals.
+• Progress. Keep on target with regular check-ins from your nutritionist.
+• Priority. See your nutritionist with no more than 4 days’ notice.
+• Ease. Correspond and schedule appointments online at your convenience.
+-->
+
+ button -> Get Started
+
+<!--
+What Every Body’s Saying
+
+“I love my friends, but they have no clue what to do when it comes to eating right or dieting.
+Nutrifeedback set me up with an awesome nutritionist and now I’ve ﬁnally got a healthy kitchen.”
+    —Jessica Schweigart
+ “Oh my god. Nutrifeedback is the best. I got delicious vegan meal recipes right away and it’s
+inspired me to start cooking again. I love this site”
+    —David Mueller
+ “My workouts have been going a lot better after I got food tips from a nutritionist I found on
+Nutrifeedback. Tons more energy, and I’m ﬁnally hitting my ﬁtness goals.”
+    —Sarah Hayes
+ “Gluten and I are not friends AT ALL, but I’ve been able to ﬁnd things I like and can actually eat
+thanks to Nutrifeedback. Total life saver.”
+    —David Schreck
+ “I’m gonna say it… I wouldn’t have ﬁt in my wedding dress if it weren’t for Nutrifeedback.”
+    —Danielle Berens
+ -->
 
 {% endblock content %}

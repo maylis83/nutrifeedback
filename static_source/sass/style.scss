@@ -2,18 +2,19 @@
 
 @import "compass/layout.scss";
 
-@include sticky-footer(88px, "#main", "#main-footer", "#footer");
+                                              @include sticky-footer(88px, "#main", "#main-footer", "#footer");
 
-
+@import "index";
 @import "registration";
 @import "buttons";
 @import "variables";
 @import "nav";
 @import "footer";
 
+
 /* uncomment for bootstrap */
-/* $bootstrap-sass-asset-helper: false; */
-/* @import "bootstrap"; */
+$bootstrap-sass-asset-helper: false;
+@import "bootstrap";
 
 /* uncomment for bourbon and neat */
 /* http://bourbon.io/docs/ */

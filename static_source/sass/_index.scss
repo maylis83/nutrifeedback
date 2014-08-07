@@ -168,9 +168,9 @@ img {
 
 .testimonial-box {
   height: 400px;
-  background-color: #999999;
-  padding-bottom: 60px;
-  padding-top: 5px;
+  //background-color: #999999;
+  padding-bottom: 100px;
+  padding-top: 50px;
   width: 100%;
   display: block;
 }
@@ -184,4 +184,39 @@ img {
    //background-size: 100% 100%;
    margin-bottom: 50px;
    //background-size:cover;
+}
+
+.user-quote {
+  font-size: 17px;
+  font-family: "robotoregular";
+  color: #B8B8B8;
+}
+
+.quote-block {
+  //width:50%;
+  //margin-left: auto;
+  //margin-right: auto;
+}
+
+.user-quote-name {
+  font-size: 16px;
+  font-family: "robotomedium";
+  color: #000000;
+}
+
+.carousel-control-prev {
+float: left;
+}
+
+.carousel-control-next {
+float: right;
+}
+
+.circular-headshot {
+width: 76px;
+height: 76px;
+border-radius: 38px;
+-webkit-border-radius: 38px;
+-moz-border-radius: 38px;
+background: url(http://link-to-your/image.jpg) no-repeat;
 }

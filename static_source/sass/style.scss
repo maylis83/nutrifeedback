@@ -2,7 +2,7 @@
 
 @import "compass/layout.scss";
 
- @include sticky-footer(88px, "#main", "#main-footer", "#footer");
+                       @include sticky-footer(88px, "#main", "#main-footer", "#footer");
 
 @import "index";
 @import "registration";
@@ -10,7 +10,7 @@
 @import "variables";
 @import "nav";
 @import "footer";
-
+@import "typography";
 
 /* uncomment for bootstrap */
 $bootstrap-sass-asset-helper: false;

@@ -25,6 +25,10 @@ img {
   font-family: "robotoregular";
   color: #FFFFFF;
   padding-bottom: 10px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .section-title {
@@ -97,7 +101,7 @@ img {
 
 .icon {
   max-width: none;
-  padding-top: 20px;
+  //padding-top: 20px;
 }
 
 .mission-box {
@@ -167,23 +171,24 @@ img {
 }
 
 .testimonial-box {
-  height: 400px;
+  //height: 400px;
   //background-color: #999999;
-  padding-bottom: 100px;
-  padding-top: 50px;
+  //padding-bottom: 100px;
+  //padding-top: 50px;
   width: 100%;
-  display: block;
+  //display: block;
 }
 
 .splash-box {
    background-image: url('../img/splash.png');
    //background-position: center;
    //background-repeat: no-repeat;
+   //background-image: cover;
    height: 585px;
    width: 100%;
    //background-size: 100% 100%;
    margin-bottom: 50px;
-   //background-size:cover;
+   background-size:cover;
 }
 
 .user-quote {
@@ -219,4 +224,31 @@ border-radius: 38px;
 -webkit-border-radius: 38px;
 -moz-border-radius: 38px;
 background: url(http://link-to-your/image.jpg) no-repeat;
+}
+
+.footer-box {
+  height: 270px;
+  background-color: #1f2a2e;
+  //padding-bottom: 100px;
+  //padding-top: 50px;
+  width: 100%;
+  display: block;
+}
+
+.footer-link {
+ font-size: 16px;
+  font-family: "robotoregular";
+  color: #FFFFFF;
+  padding-top: 20px;
+}
+
+.footer-copyright {
+font-size: 14px;
+  font-family: "robotoregular";
+  color: #FFFFFF;
+  float: left;
+}
+
+.footer-padding {
+  padding-top: 75px;
 }

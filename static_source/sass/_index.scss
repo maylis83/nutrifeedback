@@ -171,12 +171,12 @@ img {
 }
 
 .testimonial-box {
-  //height: 400px;
+  height: 395px;
   //background-color: #999999;
-  //padding-bottom: 100px;
-  //padding-top: 50px;
+  padding-bottom: 130px;
+  padding-top: 60px;
   width: 100%;
-  //display: block;
+  display: block;
 }
 
 .splash-box {
@@ -210,20 +210,21 @@ img {
 }
 
 .carousel-control-prev {
-float: left;
+  float: left;
+  padding-left: 15px;
 }
 
 .carousel-control-next {
-float: right;
+  float: right;
 }
 
 .circular-headshot {
-width: 76px;
-height: 76px;
-border-radius: 38px;
--webkit-border-radius: 38px;
--moz-border-radius: 38px;
-background: url(http://link-to-your/image.jpg) no-repeat;
+  width: 76px;
+  height: 76px;
+  border-radius: 38px;
+  -webkit-border-radius: 38px;
+  -moz-border-radius: 38px;
+  background: url(http://link-to-your/image.jpg) no-repeat;
 }
 
 .footer-box {
@@ -243,12 +244,27 @@ background: url(http://link-to-your/image.jpg) no-repeat;
 }
 
 .footer-copyright {
-font-size: 14px;
+  font-size: 14px;
   font-family: "robotoregular";
   color: #FFFFFF;
   float: left;
 }
 
 .footer-padding {
-  padding-top: 75px;
+  padding-top: 50px;
+}
+
+#testimonial-section-heading {
+  padding-bottom: 30px;
+}
+
+#sign-in-button {
+  float: right;
+  margin-right: 0px !important;
+}
+
+#header-start-button {
+  float: left;
+  width: 71px;
+  margin-left: 0px !important;
 }

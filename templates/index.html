@@ -8,10 +8,11 @@ Nutrifeedback
 {% load static from staticfiles %}
 
       <div class="row">
+        <div class="col-md-2"></div>
         <div class="col-md-1"><img class="logo" src='{% static 'img/home_logo.png' %}'/></div>
-        <div class="col-md-7"></div>
-        <div class="col-md-1"><button type="button" class="btn btn-success">Sign In</button></div>
-        <div class="col-md-1"><button type="button" class="btn btn-primary">Start</button></div>
+        <div class="col-md-5"></div>
+        <div class="col-md-1 no-pad"><button type="button" class="btn btn-success" id="sign-in-button">Sign In</button></div>
+        <div class="col-md-1"><button type="button" class="btn btn-primary" id="header-start-button">Start</button></div>
         <div class="col-md-2"></div>
       </div>
 
@@ -83,118 +84,119 @@ Nutrifeedback
       </div>
 
       <div class="testimonial-box">
+       <div id="testimonial-section-heading">
         <p class="section-title">What Every Body’s Saying</p>
+        </div>
 
-<!-- put carousel in middle of 1,10,1 row
       <div class="row">
-        <div class="col-md-1 no-pad">PREV</div>
+        <div class="col-md-1 no-pad"><a class="carousel-control-prev" href="#myCarousel" data-slide="prev"><img class="" src='{% static 'img/carousel_prev.png' %}'/></a></div>
         <div class="col-md-10 no-pad">
- -->
+
 <div id="myCarousel" class="carousel slide" data-ride="carosel">
   <div class="carousel-inner">
     <div class="active item">
       <div class="row">
-        <div class="col-md-3 no-pad"></div>
+        <div class="col-md-1 no-pad"></div>
         <div class="col-md-1 no-pad">
           <img class="circular-headshot" src='{% static 'img/testimonial-1.jpg' %}'/>
         </div>
-        <div class="col-md-5 no-pad">
+        <div class="col-md-9 no-pad">
           <div class="quote-block">
             <div class="user-quote">“I love my friends, but they have no clue what to do when it comes to eating right or dieting.
               Nutrifeedback set me up with an awesome nutritionist and now I’ve ﬁnally got a healthy kitchen.”</div>
+            <br/>
             <div class="user-quote-name">Jessica Schweigart</div>
           </div>
         </div>
-        <div class="col-md-3 no-pad"></div>
+        <div class="col-md-1 no-pad"></div>
       </div>
     </div>
 
     <div class="item">
       <div class="row">
-        <div class="col-md-3 no-pad"></div>
+        <div class="col-md-1 no-pad"></div>
         <div class="col-md-1 no-pad">
           <img class="circular-headshot" src='{% static 'img/testimonial-2.jpg' %}'/>
         </div>
-        <div class="col-md-5 no-pad">
+        <div class="col-md-9 no-pad">
           <div class="quote-block">
             <div class="user-quote">“Oh my god. Nutrifeedback is the best. I got delicious vegan meal recipes right away and it’s
               inspired me to start cooking again. I love this site”</div>
+            <br/>
             <div class="user-quote-name">David Mueller</div>
           </div>
         </div>
-        <div class="col-md-3 no-pad"></div>
+        <div class="col-md-1 no-pad"></div>
       </div>
     </div>
 
     <div class="item">
       <div class="row">
-        <div class="col-md-3 no-pad"></div>
+        <div class="col-md-1 no-pad"></div>
         <div class="col-md-1 no-pad">
           <img class="circular-headshot" src='{% static 'img/testimonial-3.jpg' %}'/>
         </div>
-        <div class="col-md-5 no-pad">
+        <div class="col-md-9 no-pad">
           <div class="quote-block">
             <div class="user-quote">“My workouts have been going a lot better after I got food tips from a nutritionist I found on
               Nutrifeedback. Tons more energy, and I’m ﬁnally hitting my ﬁtness goals.”</div>
-            <div class="user-quote-name">Sarah Hayes</div>
+            <br/>            <div class="user-quote-name">Sarah Hayes</div>
           </div>
         </div>
-        <div class="col-md-3 no-pad"></div>
+        <div class="col-md-1 no-pad"></div>
       </div>
     </div>
 
     <div class="item">
       <div class="row">
-        <div class="col-md-3 no-pad"></div>
+        <div class="col-md-1 no-pad"></div>
         <div class="col-md-1 no-pad">
           <img class="circular-headshot" src='{% static 'img/testimonial-4.jpg' %}'/>
         </div>
-        <div class="col-md-5 no-pad">
+        <div class="col-md-9 no-pad">
           <div class="quote-block">
             <div class="user-quote">“Gluten and I are not friends AT ALL, but I’ve been able to ﬁnd things I like and can actually eat
               thanks to Nutrifeedback. Total life saver.”</div>
+            <br/>
             <div class="user-quote-name">David Schreck</div>
           </div>
         </div>
-        <div class="col-md-3 no-pad"></div>
+        <div class="col-md-1 no-pad"></div>
       </div>
     </div>
 
     <div class="item">
       <div class="row">
-        <div class="col-md-3 no-pad"></div>
+        <div class="col-md-1 no-pad"></div>
         <div class="col-md-1 no-pad">
           <img class="circular-headshot" src='{% static 'img/testimonial-5.jpg' %}'/>
         </div>
-        <div class="col-md-5 no-pad">
+        <div class="col-md-9 no-pad">
           <div class="quote-block">
             <div class="user-quote">“I’m gonna say it… I wouldn’t have ﬁt in my wedding dress if it weren’t for Nutrifeedback.”</div>
             <div class="user-quote-name">Danielle Berens</div>
+            <br/>
           </div>
         </div>
-        <div class="col-md-3 no-pad"></div>
+        <div class="col-md-1 no-pad"></div>
       </div>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev"><img class="" src='{% static 'img/carousel_prev.png' %}'/></a>
-  <a class="carousel-control-next" href="#myCarousel" data-slide="next"><img class="" src='{% static 'img/carousel_next.png' %}'/></a>
 </div>
 
-
-<!--
 </div>
-<div class="col-md-1">NEXT</div>
+<div class="col-md-1"><a class="carousel-control-next" href="#myCarousel" data-slide="next"><img class="" src='{% static 'img/carousel_next.png' %}'/></a></div>
 </div>
- -->
+      </div>
 
         <div class="tagline-box">
           <div class="row">
-            <div class="col-md-10"><p class="tagline">Get the advice your body needs. Ask your ﬁrst question today.</p></div>
-            <div class="col-md-1"><button type="button" class="btn btn-primary btn-lg tagline-button">Start Now</button></div>
             <div class="col-md-1"></div>
+            <div class="col-md-9"><p class="tagline">Get the advice your body needs. Ask your ﬁrst question today.</p></div>
+            <div class="col-md-1"><button type="button" class="btn btn-primary btn-lg tagline-button">Start Now</button></div>
           </div>
         </div>
-      </div>
+
 
       <div class="footer-box">
 <div class="footer-padding">

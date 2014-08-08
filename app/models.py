@@ -1,7 +1,8 @@
 from django.db import models
 from django_extensions.db.models import AutoSlugField
 from model_utils.models import TimeStampedModel
-
+from django.forms import ModelForm, Textarea, TextInput, Select
+from django.forms.extras.widgets import SelectDateWidget
 
 class Nutritionist(TimeStampedModel):
 
@@ -144,8 +145,47 @@ class Availability(TimeStampedModel):
    "  S " + unicode(self.saturday_early) + " " + unicode(self.saturday_afternoon) + " " + unicode(self.saturday_evening) + " " + \
    "  S " + unicode(self.sunday_early) + " " + unicode(self.sunday_afternoon) + " " + unicode(self.sunday_evening))
 
+
+class HealthSurvey(TimeStampedModel):
+   GENDER = (('male', 'Male'), ('female', 'Female'))
+   EXERCISE_FREQ = [(str(i),str(i)) for i in range(26)]
+   HEALTH_GOALS = (('dummy','dummy'),)
+   DIETARY_RESTRICTIONS = (('dummy','dummy'),)
+
+   gender = models.CharField(max_length=10, choices=GENDER, verbose_name='gender')
+   dob = models.DateField(verbose_name='When is your date of birth?')
+   weight = models.IntegerField(verbose_name='weight')
+   height = models.CharField(max_length=10, verbose_name='height')
+   exercise_freq = models.CharField(max_length=255, choices=EXERCISE_FREQ, verbose_name='how often do you exercise per week?')
+   health_goals = models.CharField(max_length=255, choices=HEALTH_GOALS, verbose_name='what are your health goals?')
+   dietary_restrictions = models.CharField(max_length=255, choices=DIETARY_RESTRICTIONS, verbose_name='do you have any dietary restrictions?')
+   anything_else = models.CharField(max_length=4096, null=True, blank=True, verbose_name='anything else you would like us to know:')
+
+   def __unicode__(self):
+        return unicode(self.gender) + " " + unicode(self.dob)
+
+
+
 '''
-class (TimeStampedModel):
+class (TimeStamp edModel):
    def __unicode__(self):
         return unicode(self.)
 '''
+
+class HealthSurveyForm(ModelForm):
+
+
+   class Meta:
+      BIRTH_YEAR_CHOICES = [str(i + 1915) for i in range(100)]
+      model = HealthSurvey
+      fields = ['gender', 'dob', 'weight', 'height', 'exercise_freq', 'health_goals', 'dietary_restrictions', 'anything_else']
+      widgets = {
+          'anything_else': Textarea(attrs={'cols':100, 'rows':10, 'class':'form-field'}),
+          'weight': TextInput(attrs={'class':'form-field form-field-height-weight-size'}),
+          'height': TextInput(attrs={'class':'form-field form-field-height-weight-size'}),
+          'exercise_freq': Select(attrs={'class':'form-field form-field-dropdown-size'}),
+          'health_goals': Select(attrs={'class':'form-field form-field-dropdown-size'}),
+          'dietary_restrictions': Select(attrs={'class':'form-field form-field-dropdown-size'}),
+          'gender': Select(attrs={'class':'form-field form-field-gender-size'}),
+          'dob':SelectDateWidget(attrs={'class':'form-field form-field-dob-size'}, years=BIRTH_YEAR_CHOICES),
+      }

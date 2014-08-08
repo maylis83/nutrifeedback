@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}
+Nutrifeedback
+{% endblock title %}
+
+{% block content %}
+{% load static from staticfiles %}
+
+
+<div class="outer-canvas">
+
+<div class="top-spacer"></div>
+<div class="inner-canvas">
+
+<div class="row line-no-pad">
+  {% for i in "123456" %}
+  <div class="col-md-1 line-no-pad">
+    <div class="green-line"></div>
+  </div>
+
+  <div class="col-md-1 line-no-pad">
+    <div class="blue-line"></div>
+  </div>
+  {% endfor %}
+</div>
+
+<div id="survey-form">
+
+<div class="row line-no-pad">
+<div class="left-section-title">Health Survey</div>
+</div>
+
+<div class="row line-no-pad">
+  <div class="section-title-detail">
+    <p>Tell us a bit about yourself and your health goals so we can play matchmaker!</p>
+    <p> Don’t be shy—the more info you give us, the easier it will be to fix you up with an awesome nutritionist near you.</p>
+  </div>
+</div>
+
+<div class="divider-line"></div>
+
+<div id="form-padding">
+<form action="{% url 'survey' %}" method="post">
+{% csrf_token %}
+<div class="row">{{ form.gender.errors }}</div>
+<div class="row form-field-label">{{ form.gender.label }}</div>
+<div class="row">{{ form.gender }}</div>
+
+<div class="row">{{ form.dob.errors }}</div>
+<div class="row form-field-label">{{ form.dob.label }}</div>
+<div class="row">{{ form.dob }}</div>
+
+
+<div class="col-md-1 no-pad">
+<div class="row">{{ form.weight.errors }}</div>
+<div class="row form-field-label">{{ form.weight.label }}</div>
+<div class="row">{{ form.weight }}</div>
+</div>
+
+<div class="col-md-1" id="height-padding">
+<div class="row">{{ form.height.errors }}</div>
+<div class="row form-field-label">{{ form.height.label }}</div>
+<div class="row">{{ form.height }}</div>
+</div>
+
+<div class="col-md-10"></div>
+
+<div class="row">{{ form.exercise_freq.errors }}</div>
+<div class="row form-field-label">{{ form.exercise_freq.label }}</div>
+<div class="row">{{ form.exercise_freq }}</div>
+
+<div class="row">{{ form.health_goals.errors }}</div>
+<div class="row form-field-label">{{ form.health_goals.label }}</div>
+<div class="row">{{ form.health_goals }}</div>
+
+<div class="row">{{ form.dietary_restrictions.errors }}</div>
+<div class="row form-field-label">{{ form.dietary_restrictions.label }}</div>
+<div class="row">{{ form.dietary_restrictions }}</div>
+
+<div class="row">{{ form.anything_else.errors }}</div>
+<div class="row form-field-label">{{ form.anything_else.label }}</div>
+<div class="row">{{ form.anything_else }}</div>
+<div>
+
+
+<button type="submit" id="find-button" class="btn btn-lg btn-primary extra-wide-button no-pad">Find a Nutrionist</button>
+</form>
+</div>
+
+<div class="bottom-spacer"></div>
+
+</div>
+</div>
+
+{% endblock content %}

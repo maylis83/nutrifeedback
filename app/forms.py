@@ -9,6 +9,8 @@ from django.forms.extras.widgets import SelectDateWidget
 
 from django.utils.translation import ugettext_lazy as _
 
+
+
 class StripeTokenForm(forms.Form):
     id = forms.CharField()
 

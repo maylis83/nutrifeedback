@@ -12,11 +12,30 @@ from payments.models import Customer
 from annoying.decorators import render_to, ajax_request
 
 from .forms import StripeTokenForm, ChargeForm
+from .models import HealthSurveyForm
+
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
 
 
 @render_to('index.html')
 def index(request):
     return {}
+
+@render_to('survey.html')
+def survey(request):
+   if request.method == 'POST':
+      form = HealthSurveyForm(request.POST)
+      if form.is_valid():
+         form.save()
+         return HttpResponseRedirect('/')
+   else:
+      form = HealthSurveyForm()
+
+   return {'form': form, }
+
+
+
 
 def error(request):
     """for testing purposes"""

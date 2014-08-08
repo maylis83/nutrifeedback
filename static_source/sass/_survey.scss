@@ -1,0 +1,112 @@
+.section-title-detail {
+  color: #656565;
+  font-size: 16px;
+  font-family: "robotomedium";
+  width: 80%;
+}
+
+.green-line {
+  background-color: #63C49A;
+  height: 3px;
+  //width: 100px;
+  display: block;
+}
+
+.blue-line {
+  background-color: #69BDD9;
+  height: 3px;
+  //width: 100px;
+  display: block;
+}
+
+.line-no-pad {
+  padding: 0px !important;
+  margin: 0px !important;
+  border: 0px !important;
+}
+
+.form-field-label {
+  font-size: 16px;
+  font-family: "robotomedium";
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.form-field {
+  background-color: #F3F3F3;
+  border: none;
+  resize: none;
+}
+
+.form-field-height-weight-size {
+  height: 45px;
+  width: 140px;
+}
+
+.form-field-dropdown-size {
+  height: 45px;
+  width: 445px;
+}
+
+.form-field-gender-size {
+  height: 45px;
+  width: 200px;
+}
+
+.form-field-dob-size {
+  height: 45px;
+}
+
+#survey-form {
+  padding-left: 75px;
+}
+
+#height-padding {
+  padding-left: 115px;
+}
+
+.inner-canvas {
+  border: 5px;
+  border-color: red;
+  width: 68%;
+  height: 80%;
+  background-color: #FFFFFF;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 85px;
+  margin-bottom: 130px;
+}
+
+.top-spacer {
+  background-color: #FFFFFF;
+  height: 85px;
+  width: 100%;
+}
+
+.bottom-spacer {
+  background-color: #FFFFFF;
+  height: 66px;
+  width: 100%;
+}
+
+.outer-canvas {
+  width: 100%;
+  background-color: #F2F2F2;
+
+
+#form-padding {
+  padding-left: 16px;
+}
+
+.divider-line {
+  background-color: #E2E2E2;
+  height: 1px;
+  width: 90%;
+  margin-top: 24px;
+  margin-bottom: 0px;
+}
+
+#find-button {
+  margin-top: 57px;
+  margin-left: -15px;
+}

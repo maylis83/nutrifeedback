@@ -37,6 +37,14 @@ img {
   font-family: "robotolight";
 }
 
+.left-section-title {
+  text-align: left;
+  font-size: 36px;
+  font-family: "robotolight";
+  padding-top: 25px;
+}
+
+
 .step {
   margin-left: auto;
   margin-right: auto;
@@ -156,6 +164,10 @@ img {
 
 .wide-button {
   width: 165px;
+}
+
+.extra-wide-button {
+  width: 275px;
 }
 
 .collage-container {

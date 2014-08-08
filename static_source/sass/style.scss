@@ -1,9 +1,10 @@
-                               @import "compass/css3/background-size";
+                                                 @import "compass/css3/background-size";
 
 @import "compass/layout.scss";
 @include sticky-footer(88px, "#main", "#main-footer", "#footer");
 
 @import "index";
+@import "survey";
 @import "registration";
 @import "buttons";
 @import "variables";

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from models import Nutritionist, Consultation, Credential, Demographic, Specialty, Availability
+from models import Nutritionist, Consultation, Credential, Demographic, Specialty, Availability, HealthSurvey
 import reversion
 
 admin.site.register(Consultation)
@@ -7,6 +7,7 @@ admin.site.register(Credential)
 admin.site.register(Demographic)
 admin.site.register(Specialty)
 admin.site.register(Availability)
+admin.site.register(HealthSurvey)
 
 
 class AvailabilityInline(admin.StackedInline):

@@ -25,6 +25,7 @@ CACHES = {
 # Example: "/var/www/example.com/media/"
 MEDIA_ROOT = PROJECT_ROOT.child("media")
 MEDIA_URL = "/media/"
+print str(MEDIA_ROOT)
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files

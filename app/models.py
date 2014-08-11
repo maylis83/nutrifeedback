@@ -34,6 +34,7 @@ class Nutritionist(TimeStampedModel):
    users = models.ManyToManyField('account.User', related_name='nutritionist_users', null=True, blank=True)
    consultation_description = models.CharField(max_length=4096)
    skype_name = models.CharField(max_length=255)
+   headshot = models.ImageField(upload_to='/nutritionist_headshots/', default='/nutritionist_headshots/none.jpg')
 
    def get_full_name(self):
         return unicode(self.first_name) + " " + unicode(self.last_name)

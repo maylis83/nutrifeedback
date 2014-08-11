@@ -9,7 +9,9 @@ urlpatterns = patterns('app.views',
     url(r'^$', 'index', name='index'),
     url(r'^create_customer/', 'create_customer', name='create_customer'),
     url(r'^$', TemplateView.as_view(template_name="index.html")),
-    url(r'^survey', 'survey', name='survey')
+    url(r'^survey', 'survey', name='survey'),
+    url(r'^nutritionist/(?P<id>\d+)/$', 'nutritionist', name='nutritionist'),
+    url(r'^recommended-nutritionists', 'recommended_nutritionists', name='recommended-nutritionists')
 )
 
 from .signals import * #ensure that the signals are attatched via import

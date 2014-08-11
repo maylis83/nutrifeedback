@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}
+Nutrifeedback
+{% endblock title %}
+
+{% block content %}
+{% load static from staticfiles %}
+
+  <div class="outer-canvas">
+  <div class="top-spacer"></div>
+    <div class="inner-canvas">
+      <div class="row line-no-pad">
+        {% for i in "123456" %}
+        <div class="col-md-1 line-no-pad">
+          <div class="green-line"></div>
+        </div>
+        <div class="col-md-1 line-no-pad">
+          <div class="blue-line"></div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="inner-margin">
+      <div class="row line-no-pad">
+        <div class="left-section-title">Profile</div>
+        <div class="row line-no-pad">
+          <div class="section-title-detail">
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+        <div class="divider-line"></div>
+        <div id="nutritionist-block-margin">
+        <div class="row">
+          <div class="col-md-2">
+            <img class="circular-headshot" id="recommended-headshot" src="{{ nutritionist.headshot }}">
+          </div>
+          <div class="col-md-10 no-pad">
+            <div class="row">
+              <div id="recommended-name">
+                {{ nutritionist.first_name }} {{ nutritionist.last_name }},&nbsp
+              </div>
+              <div id="recommended-type">
+                {{ nutritionist.nutritionist_type }}
+              </div>
+            </div>
+            <div class="row" id="recommended-city">
+              <img id="pin" src='{% static 'img/pin.png' %}'/>
+              {{ nutritionist.city }}
+            </div>
+            <div class="row" id="recommended-consultation">
+              {{ nutritionist.consultation_description }}
+            </div>
+            <div>
+              <a class="btn btn-primary no-pad" id="send-message" href="{% url 'nutritionist' 1 %}">Send Message</a>
+              <a class="btn btn-primary no-pad" id="schedule-consultation" href="{% url 'nutritionist' 1 %}">Send Message</a>
+            </div>
+          </div>
+          </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="bottom-spacer"></div>
+  </div>
+{% endblock content %}

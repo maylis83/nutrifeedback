@@ -3,12 +3,13 @@ from django_extensions.db.models import AutoSlugField
 from model_utils.models import TimeStampedModel
 from django.forms import ModelForm, Textarea, TextInput, Select
 from django.forms.extras.widgets import SelectDateWidget
+from util.util import file_url
 
 class Nutritionist(TimeStampedModel):
 
    NUTRITIONIST_TYPES = (
        ('dietician' , 'Registered Dietician'),
-       ('certified_nutrtion_specialist' , 'Certified nutrition specialist'),
+       ('certified_nutrition_specialist' , 'Certified nutrition specialist'),
        ('certified_clinical_nutritionist' , 'Certified clinical nutritionist'),
        ('diplomat' , 'Diplomat of the American Clinical Board of Nutrition'),
        ('holistic_nutritionist' , 'Holistic nutritionist'),
@@ -28,13 +29,14 @@ class Nutritionist(TimeStampedModel):
    nutritionist_type = models.CharField(max_length=255, choices=NUTRITIONIST_TYPES)
    meeting_type = models.CharField(max_length=255, choices=MEETING_TYPES)
    tag_phrase = models.CharField(max_length=2048)
+   address = models.CharField(max_length=255)
    city = models.CharField(max_length=255)
    state = models.CharField(max_length=255)
    zip = models.CharField(max_length=255)
    users = models.ManyToManyField('account.User', related_name='nutritionist_users', null=True, blank=True)
    consultation_description = models.CharField(max_length=4096)
    skype_name = models.CharField(max_length=255)
-   headshot = models.ImageField(upload_to='/nutritionist_headshots/', default='/nutritionist_headshots/none.jpg')
+   headshot = models.ImageField(upload_to=file_url("/nutritionist_headshots"), default='/nutritionist_headshots/none.jpg')
 
    def get_full_name(self):
         return unicode(self.first_name) + " " + unicode(self.last_name)

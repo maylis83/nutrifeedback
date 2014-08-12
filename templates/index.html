@@ -7,22 +7,13 @@ Nutrifeedback
 {% block content %}
 {% load static from staticfiles %}
 
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-1"><img class="logo" src='{% static 'img/home_logo.png' %}'/></div>
-      <div class="col-md-5"></div>
-      <div class="col-md-1 no-pad"><a class="btn btn-success" id="sign-in-button" href="{% url 'auth_login' %}">Sign In</a></div>
-      <div class="col-md-1"><a class="btn btn-primary" id="header-start-button" href="{% url 'registration_register' %}">Start</a></div>
-      <div class="col-md-2"></div>
-    </div>
-
     </div>
     <div class="container-fluid">
       <div class="row">
         <div class="splash-box">
           <p class="slogan">Healthy Advice, Healthy Body.</p>
           <p class="slogan-detail">Get unlimited access to the best local nutritionists and unbelievable discounts on in-person nutritional consultations. Nutrifeedback makes your health goals clear, simple, and attainable.</p>
-          <center><button type="button" class="btn btn-primary wide-button">Get Started</button></center>
+          <center><button type="button" class="btn btn-primary wide-button button-style">Get Started</button></center>
         </div>
       </div>
     </div>
@@ -51,7 +42,7 @@ Nutrifeedback
         </div>
       </div>
 
-      <center><a class="btn btn-primary wide-button" href="{% url 'registration_register' %}">Start Now</a></center>
+      <center><a class="btn btn-primary wide-button button-style" href="{% url 'registration_register' %}">Start Now</a></center>
 
       </br>
       <div class="doit">

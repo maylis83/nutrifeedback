@@ -1,10 +1,8 @@
 <div id="main-footer"></div>
 <footer id="footer" >
 {% load static from staticfiles %}
-<p> TEST TEST TEST TEST </p>
-
   {% block footer %}
-<div class="container">
+<!--  <div class="container> -->
        <div class="footer-box">
       <div class="footer-padding">
         <div class="row">
@@ -15,7 +13,6 @@
             <div class="col-md-3"><a class="footer-link" href="">Privacy</a></div>
             <div class="col-md-3"><a class="footer-link" href="">Contact Us</a></div>
           </div>
-
           <div class="col-md-3"></div>
           <div class="col-md-2">
             <div class="col-md-3"><img class="icon" src='{% static 'img/twitter_icon.png' %}'/></div>
@@ -25,7 +22,6 @@
          </div>
          <div class="col-md-1"></div>
       </div>
-
         <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-11">
@@ -35,6 +31,6 @@
 
      </div>
   </div>
-</div>
+<!-- </div> -->
   {% endblock %}
 </footer>

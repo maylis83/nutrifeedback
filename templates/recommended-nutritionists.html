@@ -8,17 +8,11 @@ Nutrifeedback
 {% load static from staticfiles %}
 
   <div class="outer-canvas">
-  <div class="top-spacer"></div>
+  <div class="top-spacer"><button class="back-button" onclick="history.back()">< BACK</button></div>
     <div class="inner-canvas">
+
       <div class="row line-no-pad">
-        {% for i in "123456" %}
-        <div class="col-md-1 line-no-pad">
-          <div class="green-line"></div>
-        </div>
-        <div class="col-md-1 line-no-pad">
-          <div class="blue-line"></div>
-        </div>
-        {% endfor %}
+      {% include 'snippets/candy_line.html' %}
       </div>
 
       <div class="inner-margin">
@@ -36,15 +30,15 @@ Nutrifeedback
         <div id="nutritionist-block-margin">
         <div class="row">
           <div class="col-md-2">
-            <img class="circular-headshot" id="recommended-headshot" src="{{ nutritionist.headshot }}">
+            <img class="circular-headshot" id="recommended-headshot" src="{{ nutritionist.headshot.url }}">
           </div>
           <div class="col-md-10 no-pad">
             <div class="row">
-              <div id="recommended-name"
+              <div id="recommended-name">
                 {{ nutritionist.first_name }} {{ nutritionist.last_name }},&nbsp
               </div>
               <div id="recommended-type">
-                {{ nutritionist.nutritionist_type }} {{ nutritionist.headshot }}
+                {{ nutritionist.get_nutritionist_type_display }}
               </div>
             </div>
             <div class="row" id="recommended-city">
@@ -61,8 +55,11 @@ Nutrifeedback
           </div>
         </div>
       {% endfor %}
+
+
     </div>
+<div class="last-button-spacer"></div>
     </div>
-    <div class="bottom-spacer"></div>
+  <div class="recommended-bottom-spacer"></div>
   </div>
 {% endblock content %}

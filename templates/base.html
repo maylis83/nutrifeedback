@@ -27,13 +27,14 @@
     {% block header %}
     <!-- <header class="navbar navbar-inverse navbar-fixed-top"> -->
     {% include "nav.html" %}
-    </header>
+    <!-- </header> -->
     {% endblock header %}
      <!-- <div id="main" >  -->
      <div>
       {% block content %}
       {% endblock content %}
     </div> <!-- /container -->
+
 	{% include "footer.html" %}
 
     {% compressed_js 'vendor' %}

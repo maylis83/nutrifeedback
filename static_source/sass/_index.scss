@@ -6,6 +6,11 @@ img {
 
 }
 
+.button-style {
+  font-family: "robotomedium";
+  font-size: 16px;
+  border: none;
+}
 
 .logo {
   max-width: none;
@@ -131,6 +136,8 @@ img {
   margin-top: 43px;
   background-color: #FFFFFF !important;
   color: #5d6964 !important;
+  //border: none;
+  //border-radius: 2px;
 }
 
 .mission-photo {
@@ -246,6 +253,7 @@ img {
   //padding-top: 50px;
   width: 100%;
   display: block;
+  background-size: cover;
 }
 
 .footer-link {
@@ -273,10 +281,21 @@ img {
 #sign-in-button {
   float: right;
   margin-right: 0px !important;
+  margin-top: 38px;
+  width: 89px;
+  font-family: "robotomedium";
+  font-size: 16px;
 }
 
 #header-start-button {
   float: left;
-  width: 71px;
+  width: 89px;
   margin-left: 0px !important;
+  margin-top: 38px;
+  font-family: "robotomedium";
+  font-size: 16px;
+}
+
+.width-100 {
+  width: 100%;
 }

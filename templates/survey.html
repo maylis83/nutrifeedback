@@ -9,22 +9,12 @@ Nutrifeedback
 
 
 <div class="outer-canvas">
-
-<div class="top-spacer"></div>
-<div class="inner-canvas">
-
-<div class="row line-no-pad">
-  {% for i in "123456" %}
-  <div class="col-md-1 line-no-pad">
-    <div class="green-line"></div>
-  </div>
-
-  <div class="col-md-1 line-no-pad">
-    <div class="blue-line"></div>
-  </div>
-  {% endfor %}
+<div class="top-spacer">
 </div>
-
+<div class="inner-canvas">
+<div class="row line-no-pad">
+  {% include 'snippets/candy_line.html' %}
+</div>
 <div id="survey-form">
 
 <div class="row line-no-pad">
@@ -91,6 +81,8 @@ Nutrifeedback
 <div class="bottom-spacer"></div>
 
 </div>
-</div>
 
+</div>
+</div>
+  <div class="recommended-bottom-spacer"></div>
 {% endblock content %}

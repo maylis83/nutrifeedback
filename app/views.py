@@ -12,7 +12,7 @@ from payments.models import Customer
 from annoying.decorators import render_to, ajax_request
 
 from .forms import StripeTokenForm, ChargeForm
-from .models import HealthSurveyForm, Nutritionist
+from .models import HealthSurveyForm, Nutritionist, Credential, Demographic, Specialty
 
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
@@ -58,7 +58,20 @@ def nutritionist(request, id):
 
    print "nutritionist headshot: " + str(nutritionist.headshot)
 
-   return { 'nutritionist':nutritionist }
+   credentials = Credential.objects.filter(nutritionist=id)
+   degrees = credentials.filter(type='degree')
+   licenses = credentials.filter(type='license')
+   courses = credentials.filter(type='course')
+   demographics = Demographic.objects.filter(nutritionist=id)
+   specialties = Specialty.objects.filter(nutritionist=id)
+
+   return { 'nutritionist':nutritionist,
+            'degrees':degrees,
+            'licenses':licenses,
+            'courses':courses,
+            'demographics':demographics,
+            'specialties':specialties  }
+
 
 
 

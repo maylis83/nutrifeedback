@@ -31,7 +31,7 @@ Nutrifeedback
         </div>
       </div>
 
-        <div class="divider-line"></div>
+        <div class="profile-divider-line"></div>
         <div id="nutritionist-block-margin">
         <div class="row">
           <div class="col-md-2">
@@ -43,19 +43,106 @@ Nutrifeedback
                 {{ nutritionist.first_name }} {{ nutritionist.last_name }},&nbsp
               </div>
               <div id="recommended-type">
-                {{ nutritionist.nutritionist_type }} {{ nutritionist.headshot }}
+                {{ nutritionist.nutritionist_type }} ({{ nutritionist.get_meeting_type_display }})
               </div>
             </div>
             <div class="row" id="recommended-city">
               <img id="pin" src='{% static 'img/pin.png' %}'/>
-              {{ nutritionist.city }}
+              {{ nutritionist.city }}, {{ nutritionist.state }} {{ nutritionist.zip }}
             </div>
             <div class="row" id="recommended-consultation">
               {{ nutritionist.consultation_description }}
             </div>
-            <div>
+
+
+<div class="row">
+  <div class="col-md-4 no-pad">
               <a class="btn btn-primary no-pad" id="send-message" href="{% url 'nutritionist' 1 %}">Send Message</a>
-              <a class="btn btn-primary no-pad" id="schedule-consultation" href="{% url 'nutritionist' 1 %}">Send Message</a>
+<p class="payment-notes">User must pay $10/month to message nutritionists.</p>
+</div>
+  <div class="col-md-4 no-pad">
+              <a class="btn btn-primary no-pad" id="schedule-consultation" href="{% url 'nutritionist' 1 %}">Schedule Consultation</a>
+<p class="payment-notes">$100 to schedule consultation.</p>
+</div>
+</div>
+
+        <div class="profile-divider-line"></div>
+
+<div class="row">
+  <div class="col-md-1 no-pad">
+    <img id="credentials-icon" src='{% static 'img/credentials.png' %}'/>
+  </div>  <div class="col-md-1 no-pad">
+    <div class="profile-list-heading one-col-profile-list-heading">CREDENTIALS</div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="profile-list-sub-heading">Licenses</div>
+</div>
+
+{% for license in licenses %}
+  <div class="row profile-list-item">
+    {{ license.description }}
+  </div>
+{% endfor %}
+
+<div class="margin-20"></div>
+
+<div class="row">
+  <div class="profile-list-sub-heading">Education</div>
+</div>
+
+{% for degree in degrees %}
+  <div class="row profile-list-item">
+    {{ degree.description }}
+  </div>
+{% endfor %}
+
+{% for course in courses %}
+  <div class="row profile-list-item">
+    {{ course.description }}
+  </div>
+{% endfor %}
+
+        <div class="profile-divider-line"></div>
+
+<div class="row">
+<div class="col-md-6">
+<div class="row">
+  <div class="col-md-1 no-pad">
+    <img id="demographics-icon" src='{% static 'img/demographics.png' %}'/>
+  </div>
+  <div class="col-md-1 no-pad">
+    <div class="profile-list-heading">DEMOGRAPHICS SERVED</div>
+  </div>
+</div>
+
+      {% for demographic in demographics %}
+        <div class="row profile-list-item">
+          {{ demographic.get_type_display }}
+        </div>
+      {% endfor %}
+</div>
+
+<div class="col-md-6">
+<div class="row">
+  <div class="col-md-1 no-pad">
+    <img id="specialties-icon" src='{% static 'img/specialties.png' %}'/>
+  </div>
+  <div class="col-md-1 no-pad">
+    <div class="profile-list-heading">SPECIALTIES</div>
+  </div>
+</div>
+
+{% for specialty in specialties %}
+  <div class="row profile-list-item">
+    {{ specialty.get_type_display }}
+  </div>
+{% endfor %}
+</div>
+</div>
+            <div>
             </div>
           </div>
           </div>

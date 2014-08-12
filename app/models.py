@@ -64,8 +64,8 @@ class Credential(TimeStampedModel):
    nutritionist = models.ManyToManyField('Nutritionist', related_name='nutritionist_credential', null=True, blank=True)
 
    def __unicode__(self):
-        return self.nutritionist.get_full_name() + unicode(self.type) + " " + unicode(self.description)
-
+        #return self.nutritionist.get_full_name() + unicode(self.type) + " " + unicode(self.description)
+        return unicode(self.type) + " " + unicode(self.description)
 
 class Demographic(TimeStampedModel):
    DEMOGRAPHIC_TYPE = (

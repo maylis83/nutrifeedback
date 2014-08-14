@@ -21,10 +21,10 @@ Nutrifeedback
 
       <div class="inner-margin">
       <div class="row line-no-pad">
-        <div class="left-section-title">We Recommend These Nutritionists For You</div>
+        <div class="left-section-title">My Nutritionists</div>
         <div class="row line-no-pad">
           <div class="section-title-detail">
-            <p>Here are your top nutritionist matches based on their specialty and location.</p>
+            <p>Here are the nutritionists you’ve connected with so far. Each time you schedule a consultation with a nutritionist, we’ll add them to your list.</p>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@ Nutrifeedback
             </div>
             <div>
               <div class="row">
-                <a class="btn btn-primary no-pad view-profile-button" href="{% url 'nutritionist' nutritionist.id %}">View Profile</a>
+                <a class="btn btn-primary no-pad" id="view-consultation" href="{% url 'nutritionist' nutritionist.id %}">View Consultation</a>
               </div>
             </div>
           </div>

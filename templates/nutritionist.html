@@ -52,13 +52,17 @@ Nutrifeedback
               {{ nutritionist.consultation_description }}
             </div>
             <div class="row">
+
+              <!--
               <div class="col-md-4 no-pad">
                 <a class="btn btn-primary no-pad" id="send-message" href="{% url 'nutritionist' 1 %}">Send Message</a>
                 <p class="payment-notes no-pad">User must pay $10/month to message nutritionists.</p>
               </div>
+              -->
+
               <div class="col-md-4 no-pad" id="schedule-consultation-button-block">
-                <a class="btn btn-primary no-pad" id="schedule-consultation" href="{% url 'nutritionist' 1 %}">Schedule Consultation</a>
-                <p class="payment-notes no-pad">$100 to schedule consultation.</p>
+                <a class="btn btn-primary no-pad" id="schedule-consultation" href="{% url 'schedule-consultation' nutritionist.id %}">Schedule Consultation</a>
+                <p class="payment-notes no-pad"> $100 to schedule consultation.</p>
               </div>
             </div>
           <div class="profile-divider-line"></div>
@@ -125,6 +129,8 @@ Nutrifeedback
             {% endfor %}
           </div>
         </div>
+        </br>AVAILABLE</br>
+        {% include 'snippets/availability-table.html' %}
       <div>
    </div>
  </div>
@@ -135,4 +141,4 @@ Nutrifeedback
  </div>
  <div class="recommended-bottom-spacer"></div>
  </div>
-{% endblock content %}
+ {% endblock content %}

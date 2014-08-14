@@ -12,7 +12,7 @@ from payments.models import Customer
 from annoying.decorators import render_to, ajax_request
 
 from .forms import StripeTokenForm, ChargeForm
-from .models import HealthSurveyForm, Nutritionist, Credential, Demographic, Specialty
+from .models import HealthSurveyForm, Nutritionist, Credential, Demographic, Specialty, Availability
 
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
@@ -57,13 +57,18 @@ def nutritionist(request, id):
    courses = credentials.filter(type='course')
    demographics = Demographic.objects.filter(nutritionist=id)
    specialties = Specialty.objects.filter(nutritionist=id)
+   availability = Availability.objects.filter(nutritionist=id)
+
+   #import ipdb
+   #ipdb.set_trace()
 
    return { 'nutritionist':nutritionist,
             'degrees':degrees,
             'licenses':licenses,
             'courses':courses,
             'demographics':demographics,
-            'specialties':specialties  }
+            'specialties':specialties,
+            'availability':availability[0] }
 
 
 @render_to('schedule-consultation.html')
@@ -78,9 +83,30 @@ def schedule_consultation(request, id):
 def consultation(request, id):
 
    nutritionist = Nutritionist.objects.get(id=id)
+   availability = Availability.objects.filter(nutritionist=id)
 
-   return { 'nutritionist':nutritionist
-   }
+   return { 'nutritionist':nutritionist,
+            'availability':availability[0] }
+
+
+@render_to('my-nutritionists.html')
+def my_nutritionists(request):
+   nutritionists = Nutritionist.objects.all()
+
+   for n in nutritionists:
+      print str(n.id) + " " + str(n.headshot)
+
+   return { 'nutritionists':nutritionists }
+
+
+@render_to('upcoming-consultations.html')
+def upcoming_consultations(request):
+   nutritionists = Nutritionist.objects.all()
+
+   for n in nutritionists:
+      print str(n.id) + " " + str(n.headshot)
+
+   return { 'nutritionists':nutritionists }
 
 
 

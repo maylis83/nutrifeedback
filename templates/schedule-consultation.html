@@ -7,7 +7,12 @@ Nutrifeedback
 {% block content %}
 {% load static from staticfiles %}
 <div class="outer-canvas">
-  <div class="top-spacer"><button class="back-button" onclick="history.back()">< BACK</button></div>
+    <div class="row line-no-pad">
+      <div class="col-md-2 no-pad"></div>
+      <div class="col-md-1 no-pad">
+        <div class="top-spacer"><button class="back-button" onclick="history.back()">< BACK</button></div>
+      </div>
+    </div>
     <div class="inner-canvas">
       <div class="row line-no-pad">
         {% include 'snippets/candy_line.html' %}

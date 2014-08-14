@@ -109,7 +109,6 @@ class Specialty(TimeStampedModel):
 
 
 class Availability(TimeStampedModel):
-
    monday_early = models.BooleanField(default=False)
    monday_afternoon = models.BooleanField(default=False)
    monday_evening = models.BooleanField(default=False)

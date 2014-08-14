@@ -92,6 +92,12 @@ Nutrifeedback
               <div class="col-md-4 no-pad">
               <a class="btn btn-primary no-pad" id="message-reschedule" href="{% url 'nutritionist' 1 %}">Message to Reschedule</a>
             </div>
+            <div class="row">
+              <div class="col-md-12 no-pad">
+                </br>AVAILABLE</br>
+                {% include 'snippets/availability-table.html' %}
+              </div>
+            </div>
           </div>
         </div>
       </div>

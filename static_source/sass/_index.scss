@@ -11,9 +11,9 @@ img {
   font-size: 16px !important;
   border: none !important;
   border-radius: 3px !important;
-  background-color: #43ACD0;
+  background-color: #43ACD0 !important;
   height: 45px;
-  padding: 10px 12px;
+  padding: 10px 12px !important;
 }
 
 .logo {
@@ -295,6 +295,17 @@ img {
   width: 89px;
   font-family: "robotomedium";
   font-size: 16px;
+}
+
+#header-sign-out-button {
+  float: right;
+  margin-right: 0px !important;
+  margin-top: 38px;
+  width: 89px;
+  background-color: #63C49A;
+  font-family: "robotomedium";
+  font-size: 16px;
+  border: none;
 }
 
 #header-start-button {

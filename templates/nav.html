@@ -16,7 +16,7 @@
 </ul>
 </div>
 </div>
-        <div class="col-md-1"><a class="btn btn-primary" id="header-start-button" href="{% url 'auth_logout' %}">Sign Out</a></div>
+        <div class="col-md-1"><a class="btn btn-primary" id="header-sign-out-button" href="{% url 'auth_logout' %}">Sign Out</a></div>
       {% else %}
         <div class="col-md-1 no-pad"><a class="btn btn-success" id="sign-in-button" href="{% url 'auth_login' %}">Sign In</a></div>
         <div class="col-md-1"><a class="btn btn-primary" id="header-start-button" href="{% url 'registration_register' %}">Start</a></div>

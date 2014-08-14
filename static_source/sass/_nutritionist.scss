@@ -7,7 +7,7 @@
 #schedule-consultation {
   @extend .button-style;
   margin-left: 10px;
-  background-color: #40B985;
+  background-color: #63C49A !important;
   width: 220px;
 }
 
@@ -76,7 +76,7 @@
   color: #656565;
   //width: 80%;
   margin-top: 11px;
-  width: 220px;
+  width: 238px;
 }
 
 .margin-20 {
@@ -93,5 +93,5 @@
 }
 
 #schedule-consultation-button-block {
-  margin-left: -17px;
+  margin-left: -7px;
 }

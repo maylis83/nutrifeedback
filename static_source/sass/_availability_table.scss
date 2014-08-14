@@ -1,0 +1,26 @@
+#availability-table {
+border: 2px solid #FEE8D8;
+//border-radius: 5px;
+//border-spacing: 20px;
+background-color: #FFF5ED;
+width: 60%;
+border-collapse: collapse;
+}
+
+.availability table td {
+padding: 5px;
+}
+
+
+.availability tr {
+padding: 0px;
+}
+
+.availability tr.last {
+padding-bottom: 10px;
+}
+
+.availability th {
+padding-top: 16px;
+padding-bottom: 5px;
+}

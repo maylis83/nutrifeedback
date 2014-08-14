@@ -35,12 +35,9 @@
   margin-bottom: 30px;
 }
 
-#view-profile {
+.view-profile-button {
   @extend .button-style;
-  background-color: #43ACD0;
   width: 140px;
-  //height: 40px;
-
 }
 
 .inner-margin {

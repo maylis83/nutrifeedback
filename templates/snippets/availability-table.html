@@ -1,0 +1,59 @@
+{% load static from staticfiles %}
+<div class="availability">
+<table id="availability-table">
+
+ <col style="width:4%">
+ <col style="width:2%">
+ <col style="width:2%">
+ <col style="width:2%">
+ <col style="width:2%">
+ <col style="width:2%">
+ <col style="width:2%">
+ <col style="width:2%">
+
+<thead>
+<tr>
+<th></th>
+<th>MON</th>
+<th>TUE</th>
+<th>WED</th>
+<th>THU</th>
+<th>FRI</th>
+<th>SAT</th>
+<th>SUN</th>
+</tr>
+</thead>
+</br>
+
+<tr>
+   <td>EARLY</td>
+   <td>{% if availability.monday_early %}   <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.tuesday_early %}  <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.wednesday_early %}<img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.thursday_early %} <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.friday_early %}   <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.saturday_early %} <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.sunday_early %}   <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+</tr>
+<tr>
+   <td>AFTERNOON</td>
+   <td>{% if availability.monday_afternoon %}   <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.tuesday_afternoon %}  <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.wednesday_afternoon %}<img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.thursday_afternoon %} <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.friday_afternoon %}   <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.saturday_afternoon %} <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.sunday_afternoon %}   <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+</tr>
+<tr>
+   <td>EVENING</td>
+   <td>{% if availability.monday_evening %}   <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.tuesday_evening %}  <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.wednesday_evening %}<img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.thursday_evening %} <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.friday_evening %}   <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.saturday_evening %} <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+   <td>{% if availability.sunday_evening %}   <img id="" src='{% static 'img/date.png' %}'/>{% else %}<img id="" src='{% static 'img/blank25.png' %}'/>{% endif %}</td>
+</tr>
+</table>
+</div>

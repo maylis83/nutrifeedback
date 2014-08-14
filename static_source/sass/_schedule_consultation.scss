@@ -1,0 +1,31 @@
+#consultation-sub-heading {
+  font-size: 20px;
+  font-family: "robotoregular";
+  //color: #151515;
+  margin-bottom: 10px;
+}
+
+#consultation-price {
+  font-size: 21px;
+  font-family: "robotobold";
+  color: #40B985;
+  margin-bottom: 25px;
+}
+
+#consultation-blurb {
+  font-size: 16px;
+  font-family: "robotoregular";
+  color: #656565;
+  margin-bottom: 30px;
+  width: 60%;
+}
+
+#purchase-consultation-button {
+  @extend .button-style;
+  background-color: #43ACD0;
+  width: 260px;
+}
+
+.schedule-consultation-body {
+  margin-left: 58px;
+}

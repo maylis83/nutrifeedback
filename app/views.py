@@ -36,13 +36,6 @@ def survey(request):
 
 @render_to('recommended-nutritionists.html')
 def recommended_nutritionists(request):
-   #if request.method == 'POST':
-   #   form = HealthSurveyForm(request.POST)
-   #   if form.is_valid():
-   #      form.save()
-   #      return HttpResponseRedirect('/')
-   #else:
-   #   form = HealthSurveyForm()
    nutritionists = Nutritionist.objects.all()
 
    for n in nutritionists:
@@ -72,6 +65,22 @@ def nutritionist(request, id):
             'demographics':demographics,
             'specialties':specialties  }
 
+
+@render_to('schedule-consultation.html')
+def schedule_consultation(request, id):
+
+   nutritionist = Nutritionist.objects.get(id=id)
+
+   return { 'nutritionist':nutritionist
+   }
+
+@render_to('consultation.html')
+def consultation(request, id):
+
+   nutritionist = Nutritionist.objects.get(id=id)
+
+   return { 'nutritionist':nutritionist
+   }
 
 
 

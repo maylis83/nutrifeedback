@@ -1,5 +1,4 @@
 {% load static from staticfiles %}
-{% block header %}
 <div class="navbar-inner">
   <div class="container">
     <div class="row">
@@ -7,7 +6,16 @@
       <div class="col-md-1"><img class="logo" src='{% static 'img/home_logo.png' %}'/></div>
       <div class="col-md-5"></div>
       {% if user.is_authenticated %}
-        <div class="col-md-1 no-pad">Welcome</div>
+        <div class="col-md-1 no-pad">
+
+<div id="dropdown-block">
+<a class="dropdown" href="#">Welcome</a>
+<ul class="dropdown-list">
+    <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+    <li><a href="{% url 'survey' %}">Survey</a></li>
+</ul>
+</div>
+</div>
         <div class="col-md-1"><a class="btn btn-primary" id="header-start-button" href="{% url 'auth_logout' %}">Sign Out</a></div>
       {% else %}
         <div class="col-md-1 no-pad"><a class="btn btn-success" id="sign-in-button" href="{% url 'auth_login' %}">Sign In</a></div>
@@ -17,4 +25,12 @@
     </div>
   </div>
 </div>
-{% endblock header %}
+
+<script>
+$(document).ready(function(){
+    $("a").click(function(){
+        console.log(this);
+        $(this).next().toggle();
+    });
+});
+</script>

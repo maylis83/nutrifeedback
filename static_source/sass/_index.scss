@@ -7,9 +7,13 @@ img {
 }
 
 .button-style {
-  font-family: "robotomedium";
-  font-size: 16px;
-  border: none;
+  font-family: "robotomedium" !important;
+  font-size: 16px !important;
+  border: none !important;
+  border-radius: 3px !important;
+  background-color: #43ACD0;
+  height: 45px;
+  padding: 10px 12px;
 }
 
 .logo {

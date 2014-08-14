@@ -26,6 +26,7 @@
 
     {% block header %}
     <!-- <header class="navbar navbar-inverse navbar-fixed-top"> -->
+    {% compressed_js 'vendor' %}
     {% include "nav.html" %}
     <!-- </header> -->
     {% endblock header %}
@@ -37,7 +38,6 @@
 
 	{% include "footer.html" %}
 
-    {% compressed_js 'vendor' %}
     {% compressed_js 'app' %}
     {% block body_media %}
     {% endblock body_media %}

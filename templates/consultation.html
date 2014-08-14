@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}
+Nutrifeedback
+{% endblock title %}
+
+{% block content %}
+{% load static from staticfiles %}
+<div class="outer-canvas">
+  <div class="row line-no-pad">
+    <div class="col-md-2 no-pad"></div>
+    <div class="col-md-1 no-pad">
+      <div class="top-spacer"><button class="back-button" onclick="history.back()">< BACK</button></div>
+    </div>
+  </div>
+  <div class="inner-canvas">
+    <div class="row line-no-pad">
+      {% include 'snippets/candy_line.html' %}
+    </div>
+    <div class="inner-margin">
+      <div class="row line-no-pad">
+        <div class="left-section-title">Consultation with {{ nutritionist.first_name }} {{ nutritionist.last_name }}</div>
+        <div class="row line-no-pad">
+          <div class="section-title-detail">
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <div class="profile-divider-line"></div>
+      <div id="nutritionist-block-margin">
+        <div class="row">
+          <div class="col-md-2">
+            <img class="circular-headshot" id="recommended-headshot" src="{{ nutritionist.headshot.url }}">
+          </div>
+          <div class="col-md-10 no-pad">
+            <div class="row">
+              <div id="recommended-name">
+                {{ nutritionist.first_name }} {{ nutritionist.last_name }},&nbsp
+              </div>
+              <div id="recommended-type">
+                {{ nutritionist.get_nutritionist_type_display }}
+              </div>
+              <div id="meeting-type">
+                ({{ nutritionist.get_meeting_type_display }})
+              </div>
+            </div>
+            <div class="row">
+              <div class="consultation-subheading">
+                My Consultation Appointment:
+              </div>
+            </div>
+            <div class="row">
+              <div id="nutritionist-will-confirm">
+                ({{ nutritionist.first_name }} will get back to you to confirm this consultation within 24 hours)
+              </div>
+            </div>
+            <div class="row">
+            </div>
+            <div class="row" id="">
+              <div class="col-md-1 no-pad">
+                <img id="" src='{% static 'img/date.png' %}'/>
+              </div>
+              <div class="col-md-6 no-pad">
+                <div class="consultation-details">DATE</div>
+              </div>
+            </div>
+            <div class="row" id="">
+              <div class="col-md-1 no-pad">
+                <img id="" src='{% static 'img/time.png' %}'/>
+              </div>
+              <div class="col-md-11 no-pad">
+                <div class="consultation-details">TIME</div>
+              </div>
+            </div>
+            <div class="row" id="">
+              <div class="col-md-1 no-pad">
+                <img id="" src='{% static 'img/pin.png' %}'/>
+              </div>
+              <div class="col-md-11 no-pad">
+               <div class="consultation-details">{{ nutritionist.address }}. {{ nutritionist.city }}, {{ nutritionist.state }} {{ nutritionist.zip }}</div>
+              </div>
+            </div>
+            <div class="row" id="">
+              <div class="col-md-1 no-pad">
+                <img id="" src='{% static 'img/skype.png' %}'/>
+              </div>
+              <div class="col-md-11 no-pad">
+                <div class="consultation-details">{{ nutritionist.skype_name }}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 no-pad">
+              <a class="btn btn-primary no-pad" id="message-reschedule" href="{% url 'nutritionist' 1 %}">Message to Reschedule</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-spacer"></div>
+</div>
+<div class="recommended-bottom-spacer"></div>
+</div>
+{% endblock content %}

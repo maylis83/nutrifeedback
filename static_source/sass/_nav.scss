@@ -1,1 +1,24 @@
-//header scss goes here.
+ul {
+}
+
+ul li a {
+    display: block;
+}
+
+#dropdown-block {
+  margin-top: 47px;
+}
+
+.dropdown {
+
+}
+
+.dropdown-list {
+  background: solid;
+  background-color: #F0F0F0;
+  list-style-type: none;
+  padding: 0;
+  width: 100px;
+  border: 1px solid black;
+  display: none;
+}

@@ -37,6 +37,7 @@ class Nutritionist(TimeStampedModel):
    consultation_description = models.CharField(max_length=4096)
    skype_name = models.CharField(max_length=255)
    headshot = models.ImageField(upload_to=file_url("/nutritionist_headshots"), default='/nutritionist_headshots/none.jpg')
+   consultation_price = models.IntegerField()
 
    def get_full_name(self):
         return unicode(self.first_name) + " " + unicode(self.last_name)

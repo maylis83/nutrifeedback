@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+Nutrifeedback
+{% endblock title %}
+
+{% block content %}
+{% load static from staticfiles %}
+<div class="outer-canvas">
+  <div class="top-spacer"><button class="back-button" onclick="history.back()">< BACK</button></div>
+    <div class="inner-canvas">
+      <div class="row line-no-pad">
+        {% include 'snippets/candy_line.html' %}
+      </div>
+      <div class="inner-margin">
+        <div class="row line-no-pad">
+          <div class="left-section-title">Schedule a Consultation with {{ nutritionist.first_name }} {{ nutritionist.last_name }}</div>
+          <div class="row line-no-pad">
+            <div class="section-title-detail">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      <div class="profile-divider-line"></div>
+      </div>
+
+       <div class="schedule-consultation-body">
+<div id="consultation-sub-heading">In Person or Digital Consultation</div>
+
+<div id="consultation-price">${{ nutritionist.consultation_price }}</div>
+<div id="consultation-blurb">Struggling with low energy, weight management or other niggling health issues? A personalized nutrition plan for your unique biochemical make-up could be just what you need.</div>
+<a class="btn btn-primary" id="purchase-consultation-button" href="{% url 'auth_logout' %}">Purchase</a>
+</div>
+
+<div class="bottom-spacer"></div>
+</div>
+<div class="recommended-bottom-spacer"></div>
+</div>
+{% endblock content %}

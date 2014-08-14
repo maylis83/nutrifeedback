@@ -108,6 +108,7 @@
 }
 
 #find-button {
+  @extend .button-style;
   margin-top: 57px;
   margin-left: -15px;
 }

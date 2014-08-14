@@ -1,18 +1,13 @@
 #send-message {
+  @extend .button-style;
   //margin-left: -14px;
-  font-family: "robotomedium";
-  font-size: 16px;
-  height: 40px;
   width: 220px;
 }
 
 #schedule-consultation {
-  //margin-left: 10px;
-  font-family: "robotomedium";
-  font-size: 16px;
-  height: 40px;
+  @extend .button-style;
+  margin-left: 10px;
   background-color: #40B985;
-  border-color: #40B985;
   width: 220px;
 }
 

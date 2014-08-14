@@ -3,3 +3,21 @@
   background-color: #63C49A !important;
   width: 180px;
 }
+
+#add-nutritionists {
+  @extend .button-style;
+  //background-color: #63C49A !important;
+  width: 225px;
+}
+
+#no-nutritionists {
+  margin-top: 100px;
+  margin-bottom: 30px;
+  font-family: "robotolight";
+  font-size: 30px;
+  color: #BBBBBB;
+}
+
+#no-nutritionist-padding {
+  height: 135px;
+}

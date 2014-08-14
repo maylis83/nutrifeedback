@@ -29,43 +29,50 @@ Nutrifeedback
         </div>
       </div>
 
-      {% for nutritionist in nutritionists %}
-        <div class="divider-line"></div>
-        <div id="nutritionist-block-margin">
-        <div class="row">
-          <div class="col-md-2">
-            <img class="circular-headshot" id="recommended-headshot" src="{{ nutritionist.headshot.url }}">
-          </div>
-          <div class="col-md-10 no-pad">
-            <div class="row">
-              <div id="recommended-name">
-                {{ nutritionist.first_name }} {{ nutritionist.last_name }},&nbsp
-              </div>
-              <div id="recommended-type">
-                {{ nutritionist.get_nutritionist_type_display }}
-              </div>
+      {% if nutritionist|length != 0 %}
+        {% for nutritionist in nutritionists %}
+          <div class="divider-line"></div>
+          <div id="nutritionist-block-margin">
+          <div class="row">
+            <div class="col-md-2">
+              <img class="circular-headshot" id="recommended-headshot" src="{{ nutritionist.headshot.url }}">
             </div>
-            <div class="row" id="recommended-city">
-              <img id="pin" src='{% static 'img/pin.png' %}'/>
-              {{ nutritionist.city }}
-            </div>
-            <div class="row" id="recommended-consultation">
-              {{ nutritionist.consultation_description }}
-            </div>
-            <div>
+            <div class="col-md-10 no-pad">
               <div class="row">
-                <a class="btn btn-primary no-pad" id="view-consultation" href="{% url 'nutritionist' nutritionist.id %}">View Consultation</a>
+                <div id="recommended-name">
+                  {{ nutritionist.first_name }} {{ nutritionist.last_name }},&nbsp
+                </div>
+                <div id="recommended-type">
+                  {{ nutritionist.get_nutritionist_type_display }}
+                </div>
+              </div>
+              <div class="row" id="recommended-city">
+                <img id="pin" src='{% static 'img/pin.png' %}'/>
+                {{ nutritionist.city }}
+              </div>
+              <div class="row" id="recommended-consultation">
+                {{ nutritionist.consultation_description }}
+              </div>
+              <div>
+                <div class="row">
+                  <a class="btn btn-primary no-pad" id="view-profile" href="{% url 'nutritionist' nutritionist.id %}">View Consultation</a>
+                </div>
               </div>
             </div>
+            </div>
           </div>
-          </div>
-        </div>
-      {% endfor %}
-
-
+        {% endfor %}
+      {% else %}
+        <div class="divider-line"></div>
+        <center>
+          <div id="no-nutritionists">You don't have any nutritionists</div>
+          <a class="btn btn-primary no-pad" id="add-nutritionists" href="{% url 'recommended-nutritionists' %}">Add Nutritionists</a>
+        </center>
+        <div id="no-nutritionist-padding"></div>
+      {% endif %}
+      </div>
+      <div class="last-button-spacer"></div>
     </div>
-<div class="last-button-spacer"></div>
-    </div>
-  <div class="recommended-bottom-spacer"></div>
+    <div class="recommended-bottom-spacer"></div>
   </div>
 {% endblock content %}

@@ -75,7 +75,6 @@ class ConsultationForm(ModelForm):
       }
 
 
-
 class Credential(TimeStampedModel):
    CREDENTIAL_TYPE = (
       ('degree', 'Degree'),

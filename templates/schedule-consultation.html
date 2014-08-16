@@ -103,37 +103,109 @@ $(document).ready(function(){
            console.log(date);
            console.log(date.getDay());
 
+           if ($(".consultation-time option[value='early']").length == 0) {
+              $(".consultation-time").append('<option value="early">Early</option>')
+           }
+
+           if ($(".consultation-time option[value='afternoon']").length == 0) {
+              $(".consultation-time").append('<option value="afternoon">Afternoon</option>')
+           }
+
+           if ($(".consultation-time option[value='evening']").length == 0) {
+              $(".consultation-time").append('<option value="evening">Evening</option>')
+           }
+
            var day_of_week = date.getDay();
 
            switch(day_of_week) {
               case 0: // Sun
                  console.log("Sun");
+                 {% if not availability.sunday_early %}
+                    $(".consultation-time option[value='early']").remove()
+                 {% endif %}
+                 {% if not availability.sunday_afternoon %}
+                    $(".consultation-time option[value='afternoon']").remove()
+                 {% endif %}
+                 {% if not availability.sunday_evening %}
+                   $(".consultation-time option[value='evening']").remove()
+                 {% endif %}
                  break;
               case 1:  // Mon
                  console.log("Mon");
+                 {% if not availability.monday_early %}
+                    $(".consultation-time option[value='early']").remove()
+                 {% endif %}
+                 {% if not availability.monday_afternoon %}
+                    $(".consultation-time option[value='afternoon']").remove()
+                 {% endif %}
+                 {% if not availability.monday_evening %}
+                   $(".consultation-time option[value='evening']").remove()
+                 {% endif %}
                  break;
               case 2:  // Tue
                  console.log("Tue");
+                 {% if not availability.tuesday_early %}
+                    $(".consultation-time option[value='early']").remove()
+                 {% endif %}
+                 {% if not availability.tuesday_afternoon %}
+                    $(".consultation-time option[value='afternoon']").remove()
+                 {% endif %}
+                 {% if not availability.tuesday_evening %}
+                   $(".consultation-time option[value='evening']").remove()
+                 {% endif %}
                  break;
               case 3:  // Wed
                  console.log("Wed");
+                 {% if not availability.wednesday_early %}
+                    $(".consultation-time option[value='early']").remove()
+                 {% endif %}
+                 {% if not availability.wednesday_afternoon %}
+                    $(".consultation-time option[value='afternoon']").remove()
+                 {% endif %}
+                 {% if not availability.wednesday_evening %}
+                   $(".consultation-time option[value='evening']").remove()
+                 {% endif %}
                  break;
               case 4:  // Thr
                  console.log("Thr");
+                 {% if not availability.thursday_early %}
+                    $(".consultation-time option[value='early']").remove()
+                 {% endif %}
+                 {% if not availability.thursday_afternoon %}
+                    $(".consultation-time option[value='afternoon']").remove()
+                 {% endif %}
+                 {% if not availability.thursday_evening %}
+                   $(".consultation-time option[value='evening']").remove()
+                 {% endif %}
                  break;
               case 5:  // Fri
                  console.log("Fri");
+                 {% if not availability.friday_early %}
+                    $(".consultation-time option[value='early']").remove()
+                 {% endif %}
+                 {% if not availability.friday_afternoon %}
+                    $(".consultation-time option[value='afternoon']").remove()
+                 {% endif %}
+                 {% if not availability.friday_evening %}
+                   $(".consultation-time option[value='evening']").remove()
+                 {% endif %}
                  break;
               case 6:  // Sat
                  console.log("Sat");
+                 {% if not availability.saturday_early %}
+                    $(".consultation-time option[value='early']").remove()
+                 {% endif %}
+                 {% if not availability.saturday_afternoon %}
+                    $(".consultation-time option[value='afternoon']").remove()
+                 {% endif %}
+                 {% if not availability.saturday_evening %}
+                   $(".consultation-time option[value='evening']").remove()
+                 {% endif %}
                  break;
            }
         }
     });
 });
-
-//$(".consultation-time option[value='afternoon']").remove()
-
 
 /*
 date = new Date(2014,7,15)  month is zero idx

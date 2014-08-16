@@ -83,9 +83,11 @@ def schedule_consultation(request, id):
       form = HealthSurveyForm()
 
    nutritionist = Nutritionist.objects.get(id=id)
+   availability = Availability.objects.filter(nutritionist=id)
 
    return { 'form': form,
             'nutritionist':nutritionist,
+            'availability':availability[0]
           }
 
 

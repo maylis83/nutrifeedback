@@ -47,12 +47,33 @@ class Nutritionist(TimeStampedModel):
 
 
 class Consultation(TimeStampedModel):
+   TIMES = (
+        ('early', 'Early'),
+        ('afternoon', 'Afternoon'),
+        ('evening', 'Evening'),
+   )
+
    user = models.ForeignKey('account.User', related_name='user_consultation', null=True, blank=True)
    nutritionist = models.ForeignKey('Nutritionist', related_name='nutritionist_consultation', null=True, blank=True)
-   consultation = models.DateTimeField()
+   date = models.DateField()
+   time = models.CharField(max_length=255, choices=TIMES)
 
    def __unicode__(self):
         return self.user.get_full_name() + " and " + self.nutritionist.get_full_name() + " on " + unicode(self.consultation)
+
+class ConsultationForm(ModelForm):
+   class Meta:
+      from datetime import date
+      current_year = date.today().year
+      YEAR_CHOICES = [str(current_year), str(current_year + 1)]
+
+      model = Consultation
+      fields = ['date', 'time']
+      widgets = {
+          'date':SelectDateWidget(attrs={'class':'consultation-date'}, years=YEAR_CHOICES),
+          'time':Select(attrs={'class':'consultation-time'}),
+      }
+
 
 
 class Credential(TimeStampedModel):
@@ -168,16 +189,7 @@ class HealthSurvey(TimeStampedModel):
         return unicode(self.gender) + " " + unicode(self.dob)
 
 
-
-'''
-class (TimeStamp edModel):
-   def __unicode__(self):
-        return unicode(self.)
-'''
-
 class HealthSurveyForm(ModelForm):
-
-
    class Meta:
       BIRTH_YEAR_CHOICES = [str(i + 1915) for i in range(100)]
       model = HealthSurvey
@@ -192,3 +204,10 @@ class HealthSurveyForm(ModelForm):
           'gender': Select(attrs={'class':'form-field form-field-gender-size'}),
           'dob':SelectDateWidget(attrs={'class':'form-field form-field-dob-size'}, years=BIRTH_YEAR_CHOICES),
       }
+
+
+'''
+class (TimeStamp edModel):
+   def __unicode__(self):
+        return unicode(self.)
+'''

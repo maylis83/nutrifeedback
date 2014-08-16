@@ -2,7 +2,7 @@
 @import "compass/layout.scss";
 @include sticky-footer(88px, "#main", "#main-footer", "#footer");
 
-@import "index";
+         @import "index";
 @import "survey";
 @import "recommended_nutritionists";
 @import "nutritionist";

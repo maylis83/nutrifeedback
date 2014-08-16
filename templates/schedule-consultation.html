@@ -14,6 +14,9 @@ Nutrifeedback
       </div>
     </div>
     <div class="inner-canvas">
+<form action="{% url 'schedule-consultation' nutritionist.id %}" method="post">
+{% csrf_token %}
+
       <div class="row line-no-pad">
         {% include 'snippets/candy_line.html' %}
       </div>
@@ -22,23 +25,128 @@ Nutrifeedback
           <div class="left-section-title">Schedule a Consultation with {{ nutritionist.first_name }} {{ nutritionist.last_name }}</div>
           <div class="row line-no-pad">
             <div class="section-title-detail">
+
               <p></p>
             </div>
           </div>
         </div>
       <div class="profile-divider-line"></div>
       </div>
-
        <div class="schedule-consultation-body">
+
+<div class="row no-pad">
+<div id="consultation-schedule-form-block">
+  <div class="col-md-4">
+    <div class="row">
+      Date
+    </div>
+    <div class="row">
+      {{ form.date }}
+    </div>
+  </div>
+  <div class="col-md-2" id="time-column">
+    <div class="row">
+      Time
+    </div>
+    <div class="row">
+      {{ form.time }}
+    </div>
+  </div>
+</div>
+</div>
+
+
 <div id="consultation-sub-heading">In Person or Digital Consultation</div>
 
 <div id="consultation-price">${{ nutritionist.consultation_price }}</div>
 <div id="consultation-blurb">Struggling with low energy, weight management or other niggling health issues? A personalized nutrition plan for your unique biochemical make-up could be just what you need.</div>
+<!--
 <a class="btn btn-primary" id="purchase-consultation-button" href="{% url 'auth_logout' %}">Purchase</a>
+ -->
+<button type="submit" id="purchase-consultation-button" class="btn btn-primary">Purchase</button>
 </div>
 
 <div class="bottom-spacer"></div>
 </div>
+</form>
 <div class="recommended-bottom-spacer"></div>
 </div>
+
+<script>
+var num = {}
+num["January"]   = "0";
+num["February"]  = "1";
+num["March"]     = "2";
+num["April"]     = "3";
+num["May"]       = "4";
+num["June"]      = "5";
+num["July"]      = "6";
+num["August"]    = "7";
+num["Septembet"] = "8";
+num["October"]   = "9";
+num["November"]  = "10";
+num["January"]   = "11";
+
+$(document).ready(function(){
+    $(".consultation-date").click(function(){
+        console.log(this);
+        var month = $("#id_date_month :selected").text()
+        var day = $("#id_date_day :selected").text()
+        var year = $("#id_date_year :selected").text()
+        console.log(month + ' ' + day + ' ' + year)
+
+        if ((month == '---') || (day == '---') || (year == '---')) {
+        }
+        else {
+           var month_num = num[month];
+           var date = new Date(year,month_num,day);
+           console.log(date);
+           console.log(date.getDay());
+
+           var day_of_week = date.getDay();
+
+           switch(day_of_week) {
+              case 0: // Sun
+                 console.log("Sun");
+                 break;
+              case 1:  // Mon
+                 console.log("Mon");
+                 break;
+              case 2:  // Tue
+                 console.log("Tue");
+                 break;
+              case 3:  // Wed
+                 console.log("Wed");
+                 break;
+              case 4:  // Thr
+                 console.log("Thr");
+                 break;
+              case 5:  // Fri
+                 console.log("Fri");
+                 break;
+              case 6:  // Sat
+                 console.log("Sat");
+                 break;
+           }
+        }
+    });
+});
+
+//$(".consultation-time option[value='afternoon']").remove()
+
+
+/*
+date = new Date(2014,7,15)  month is zero idx
+Fri Aug 15 2014 00:00:00 GMT-0400 (EDT)
+
+date.getDay()  day Sun = 0
+5
+
+date = new Date(2014,8,1)
+Mon Sep 01 2014 00:00:00 GMT-0400 (EDT)
+date.getDay()
+*/
+
+</script>
+
 {% endblock content %}

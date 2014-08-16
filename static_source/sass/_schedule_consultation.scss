@@ -1,3 +1,4 @@
+
 #consultation-sub-heading {
   font-size: 24px;
   font-family: "robotoregular";
@@ -28,4 +29,28 @@
 
 .schedule-consultation-body {
   margin-left: 58px;
+}
+
+#consultation-schedule-form-block {
+  margin-left: 15px;
+  margin-bottom: 110px;
+  margin-top: 12px;
+}
+
+.consultation-date {
+  @extend .form-field;
+  height: 45px;
+  font-family: "robotoregular";
+  font-size: 16px;
+}
+
+.consultation-time {
+  @extend .form-field;
+  height: 45px;
+  font-family: "robotoregular";
+  font-size: 16px;
+}
+
+#time-column {
+  margin-left: -50px;
 }

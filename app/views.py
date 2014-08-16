@@ -12,7 +12,7 @@ from payments.models import Customer
 from annoying.decorators import render_to, ajax_request
 
 from .forms import StripeTokenForm, ChargeForm
-from .models import HealthSurveyForm, Nutritionist, Credential, Demographic, Specialty, Availability
+from .models import HealthSurveyForm, ConsultationForm, Nutritionist, Credential, Demographic, Specialty, Availability
 
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
@@ -33,6 +33,7 @@ def survey(request):
       form = HealthSurveyForm()
 
    return {'form': form, }
+
 
 @render_to('recommended-nutritionists.html')
 def recommended_nutritionists(request):
@@ -73,11 +74,20 @@ def nutritionist(request, id):
 
 @render_to('schedule-consultation.html')
 def schedule_consultation(request, id):
+   if request.method == 'POST':
+      form = ConsultationForm(request.POST)
+      if form.is_valid():
+         form.save()
+         return HttpResponseRedirect('/')
+   else:
+      form = HealthSurveyForm()
 
    nutritionist = Nutritionist.objects.get(id=id)
 
-   return { 'nutritionist':nutritionist
-   }
+   return { 'form': form,
+            'nutritionist':nutritionist,
+          }
+
 
 @render_to('consultation.html')
 def consultation(request, id):

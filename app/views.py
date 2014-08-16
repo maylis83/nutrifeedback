@@ -74,16 +74,20 @@ def nutritionist(request, id):
 
 @render_to('schedule-consultation.html')
 def schedule_consultation(request, id):
+   nutritionist = Nutritionist.objects.get(id=id)
+   availability = Availability.objects.filter(nutritionist=id)
+
    if request.method == 'POST':
       form = ConsultationForm(request.POST)
+      print str(request.POST)
       if form.is_valid():
-         form.save()
+         consultation = form.save(commit=False)
+         consultation.user = request.user
+         consultation.nutritionist = nutritionist
+         consultation.save()
          return HttpResponseRedirect('/')
    else:
       form = HealthSurveyForm()
-
-   nutritionist = Nutritionist.objects.get(id=id)
-   availability = Availability.objects.filter(nutritionist=id)
 
    return { 'form': form,
             'nutritionist':nutritionist,

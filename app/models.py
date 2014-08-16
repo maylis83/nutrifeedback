@@ -59,7 +59,7 @@ class Consultation(TimeStampedModel):
    time = models.CharField(max_length=255, choices=TIMES)
 
    def __unicode__(self):
-        return self.user.get_full_name() + " and " + self.nutritionist.get_full_name() + " on " + unicode(self.consultation)
+        return unicode(self.user) + " and " + unicode(self.nutritionist) + " on " + unicode(self.date) + " in" + unicode(self.time)
 
 class ConsultationForm(ModelForm):
    class Meta:

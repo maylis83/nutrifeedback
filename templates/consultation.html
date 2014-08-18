@@ -61,7 +61,7 @@ Nutrifeedback
                 <img id="" src='{% static 'img/date.png' %}'/>
               </div>
               <div class="col-md-6 no-pad">
-                <div class="consultation-details">DATE</div>
+                <div class="consultation-details">{{ consultation.date }}</div>
               </div>
             </div>
             <div class="row" id="">
@@ -69,7 +69,7 @@ Nutrifeedback
                 <img id="" src='{% static 'img/time.png' %}'/>
               </div>
               <div class="col-md-11 no-pad">
-                <div class="consultation-details">TIME</div>
+                <div class="consultation-details">{{ consultation.get_time_display }}</div>
               </div>
             </div>
             <div class="row" id="">
@@ -88,9 +88,15 @@ Nutrifeedback
                 <div class="consultation-details">{{ nutritionist.skype_name }}</div>
               </div>
             </div>
+
             <div class="row">
-              <div class="col-md-4 no-pad">
+
+<!--              <div class="col-md-4 no-pad">
               <a class="btn btn-primary no-pad" id="message-reschedule" href="{% url 'nutritionist' 1 %}">Message to Reschedule</a>
+            </div>
+ -->
+             <div class="col-md-4 no-pad">
+               <a class="btn btn-primary" id="pay-button" href="">Pay</a>
             </div>
             <div class="row">
               <div class="col-md-12 no-pad">
@@ -107,4 +113,41 @@ Nutrifeedback
 </div>
 <div class="recommended-bottom-spacer"></div>
 </div>
+
+
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<script>
+  var handler = StripeCheckout.configure({
+    key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+    //image: '/square-image.png',
+    image: '{% static 'img/home_logo.png' %}',
+    token: function(token) {
+      $.ajax({
+         url: '{% url 'payment' %}',
+         data: {'token': token, 'nutritionist':{{ nutritionist.id }}, 'consultation':{{consultation.id }}},
+         type: 'POST',
+         dataType: 'json',
+         cotentType: 'application/json',
+         success: function(data) {
+         },
+      });
+    }
+  });
+
+  document.getElementById('pay-button').addEventListener('click', function(e) {
+    // Open Checkout with further options
+    handler.open({
+      name: 'Nutrifeedback',
+      description: 'Consultation with {{ nutritionist.first_name }} {{ nutritionist.last_name }}',
+      amount: {{ stripe_price }},
+      email: '{{ user.email }}',
+      allowRememberMe: false,
+    });
+    e.preventDefault();
+  });
+
+//<img src="http://127.0.0.1:8888/square-image.png">
+</script>
+
 {% endblock content %}

@@ -13,9 +13,10 @@ urlpatterns = patterns('app.views',
     url(r'^nutritionist/(?P<id>\d+)/$', 'nutritionist', name='nutritionist'),
     url(r'^recommended-nutritionists', 'recommended_nutritionists', name='recommended-nutritionists'),
     url(r'^schedule-consultation/(?P<id>\d+)/$', 'schedule_consultation', name='schedule-consultation'),
-    url(r'^consultation/(?P<id>\d+)/$', 'consultation', name='consultation'),
+    url(r'^consultation/(?P<nutritionist_id>\d+)/(?P<consultation_id>\d+)/$', 'consultation', name='consultation'),
     url(r'^upcoming-consultations', 'upcoming_consultations', name='upcoming-consultations'),
-    url(r'^my-nutritionists', 'my_nutritionists', name='my-nutritionists')
+    url(r'^my-nutritionists', 'my_nutritionists', name='my-nutritionists'),
+    url(r'^payment', 'payment', name='payment')
 )
 
 from .signals import * #ensure that the signals are attatched via import

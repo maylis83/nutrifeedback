@@ -1,7 +1,13 @@
 #message-reschedule {
-@extend .button-style;
-margin-top: 27px;
-width: 210px;
+  @extend .button-style;
+  margin-top: 27px;
+  width: 210px;
+}
+
+#pay-button {
+  @extend .button-style;
+  margin-top: 27px;
+  width: 210px;
 }
 
 .consultation-subheading {

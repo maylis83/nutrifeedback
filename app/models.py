@@ -5,6 +5,7 @@ from django.forms import ModelForm, Textarea, TextInput, Select
 from django.forms.extras.widgets import SelectDateWidget
 from util.util import file_url
 
+
 class Nutritionist(TimeStampedModel):
 
    NUTRITIONIST_TYPES = (
@@ -57,6 +58,7 @@ class Consultation(TimeStampedModel):
    nutritionist = models.ForeignKey('Nutritionist', related_name='nutritionist_consultation', null=True, blank=True)
    date = models.DateField()
    time = models.CharField(max_length=255, choices=TIMES)
+   paid = models.BooleanField(default=False)
 
    def __unicode__(self):
         return unicode(self.user) + " and " + unicode(self.nutritionist) + " on " + unicode(self.date) + " in" + unicode(self.time)

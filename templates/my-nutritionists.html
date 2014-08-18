@@ -29,33 +29,33 @@ Nutrifeedback
         </div>
       </div>
 
-      {% if nutritionist|length != 0 %}
-        {% for nutritionist in nutritionists %}
+      {% if consultations|length != 0 %}
+        {% for consultation in consultations %}
           <div class="divider-line"></div>
           <div id="nutritionist-block-margin">
           <div class="row">
             <div class="col-md-2">
-              <img class="circular-headshot" id="recommended-headshot" src="{{ nutritionist.headshot.url }}">
+              <img class="circular-headshot" id="recommended-headshot" src="{{ consultation.nutritionist.headshot.url }}">
             </div>
             <div class="col-md-10 no-pad">
               <div class="row">
                 <div id="recommended-name">
-                  {{ nutritionist.first_name }} {{ nutritionist.last_name }},&nbsp
+                  {{ consultation.nutritionist.first_name }} {{ consultation.nutritionist.last_name }},&nbsp
                 </div>
                 <div id="recommended-type">
-                  {{ nutritionist.get_nutritionist_type_display }}
+                  {{ consultation.nutritionist.get_nutritionist_type_display }}
                 </div>
               </div>
               <div class="row" id="recommended-city">
                 <img id="pin" src='{% static 'img/pin.png' %}'/>
-                {{ nutritionist.city }}
+                {{ consultation.nutritionist.city }}
               </div>
               <div class="row" id="recommended-consultation">
-                {{ nutritionist.consultation_description }}
+                {{ consultation.nutritionist.consultation_description }}
               </div>
               <div>
                 <div class="row">
-                  <a class="btn btn-primary no-pad" id="view-profile" href="{% url 'nutritionist' nutritionist.id %}">View Consultation</a>
+                  <a class="btn btn-primary no-pad" id="view-profile" href="{% url 'nutritionist' consultation.nutritionist.id %}">View Consultation</a>
                 </div>
               </div>
             </div>

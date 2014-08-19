@@ -75,5 +75,5 @@ DEVSERVER_MODULES = (
 TEMPLATE_STRING_IF_INVALID = ""
 SECRET_KEY = "&)y$vgj8lzxlexal31dcd(^ua(0yf95)f^b@$=*to5s)*eznxq"
 
-STRIPE_PUBLIC_KEY = ""
-STRIPE_SECRET_KEY = ""
+STRIPE_PUBLIC_KEY = "pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+STRIPE_SECRET_KEY = "sk_test_BQokikJOvBiI2HlWgH4olfQ2"

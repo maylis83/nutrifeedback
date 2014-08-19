@@ -116,22 +116,26 @@ Nutrifeedback
 
 
 
-<script src="https://checkout.stripe.com/checkout.js"></script>
+<script src="//checkout.stripe.com/v2/checkout.js"></script>
+
+<script>
+ chargeCustomer = function(amount, nutritionist, consultation){
+   $("<form method='post' action='{% url "charge_customer" %}'> {% csrf_token %}<input name='amount' value=" + amount +"><input name='nutritionist' value=" + nutritionist +"><input name='consultation' value=" + consultation +"></form>").appendTo("body").submit();
+ }
+</script>
+
 <script>
   var handler = StripeCheckout.configure({
-    key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
-    //image: '/square-image.png',
-    image: '{% static 'img/home_logo.png' %}',
-    token: function(token) {
-      $.ajax({
-         url: '{% url 'payment' %}',
-         data: {'token': token, 'nutritionist':{{ nutritionist.id }}, 'consultation':{{consultation.id }}, 'amount':{{ nutritionist.consultation_price }}},
-         type: 'POST',
-         dataType: 'json',
-         cotentType: 'application/json',
-         success: function(data) {
-         },
-      });
+   key: "{{SETTINGS.STRIPE_PUBLIC_KEY}}",
+   image: "{% static 'img/home_logo.png' %}",
+   token: function(token, args) {
+     $.post("{% url 'create_customer' %}", token).then(function(){
+       var amount = {{ nutritionist.consultation_price }};
+       var nutritionist = {{ nutritionist.id }};
+       var consultation = {{consultation.id }},
+       //response = chargeCustomer(amount, 1, 1);
+       response = chargeCustomer(amount, nutritionist, consultation);
+     })
     }
   });
 
@@ -147,7 +151,5 @@ Nutrifeedback
     e.preventDefault();
   });
 
-//<img src="http://127.0.0.1:8888/square-image.png">
 </script>
-
 {% endblock content %}

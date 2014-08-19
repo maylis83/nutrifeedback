@@ -17,3 +17,5 @@ class StripeTokenForm(forms.Form):
 
 class ChargeForm(forms.Form):
     amount = forms.DecimalField(max_digits=5, decimal_places=2)
+    nutritionist = forms.IntegerField()
+    consultation = forms.IntegerField()

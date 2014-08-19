@@ -8,6 +8,7 @@ urlpatterns = patterns('app.views',
     url(r'^404/', '_404', name='404'),
     url(r'^$', 'index', name='index'),
     url(r'^create_customer/', 'create_customer', name='create_customer'),
+    url(r'^charge_customer/', 'charge_customer', name='charge_customer'),
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^survey', 'survey', name='survey'),
     url(r'^nutritionist/(?P<id>\d+)/$', 'nutritionist', name='nutritionist'),
@@ -16,7 +17,6 @@ urlpatterns = patterns('app.views',
     url(r'^consultation/(?P<nutritionist_id>\d+)/(?P<consultation_id>\d+)/$', 'consultation', name='consultation'),
     url(r'^upcoming-consultations', 'upcoming_consultations', name='upcoming-consultations'),
     url(r'^my-nutritionists', 'my_nutritionists', name='my-nutritionists'),
-    url(r'^payment', 'payment', name='payment')
 )
 
 from .signals import * #ensure that the signals are attatched via import

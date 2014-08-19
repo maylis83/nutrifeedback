@@ -169,37 +169,6 @@ def upcoming_consultations(request):
           }
 
 
-def payment(request):
-   #import ipdb
-   #ipdb.set_trace()
-
-   print "N: " + str(request.POST['nutritionist'])
-   print "C: " + str(request.POST['consultation'])
-   print str(request.POST['token[id]'])
-   print str(request.POST['token[card][id]'])
-
-   amount = request.POST['nutritionist']
-   card = request.POST['token[card][id]']
-
-   email_user(request)
-   email_nutritionist(request)
-
-   # key is missing
-
-   customer = Customer.create(request.user, card=card, charge_immediately=False)
-   print str(customer)
-
-   r = customer.charge(amount, description="nutrifeedback")
-   print str(r)
-
-   return HttpResponseRedirect('/')
-
-   # TODO mark consultation as saved
-   #consultation = Consultation.objects.get(id=consultation)
-   #consultation.paid = True
-
-
-
 
 '''
 u'token[card][funding]': [u'credit'],
@@ -256,14 +225,35 @@ def create_customer(request):
 
 @login_required
 def charge_customer(request):
+    print "charge_customer()"
     customer = request.user.customer
-    form = StripeTokenForm(request.POST)
+    print "customer: " + str(customer)
+
+    form = ChargeForm(request.POST)
+    print "form: " + str(form)
+
     if not form.is_valid():
+        print "form not valid"
         return HttpResponseBadRequest()
 
     amount = form.cleaned_data['amount']
+    print "amount: " + str(amount)
     customer.charge(amount, description="nutrifeedback")
+
+    n = form.cleaned_data['nutritionist']
+    print "n: " + str(n)
+
+    c = form.cleaned_data['consultation']
+    print "c: " + str(c)
+
+    email_user(request)
+    email_nutritionist(request)
+
     return HttpResponseRedirect("/")
+
+    #IntegrityError: duplicate key value violates unique constraint "payments_customer_user_id_key"
+    #DETAIL:  Key (user_id)=(1) already exists.
+
 
 
 def email_user(request):

@@ -125,7 +125,7 @@ Nutrifeedback
     token: function(token) {
       $.ajax({
          url: '{% url 'payment' %}',
-         data: {'token': token, 'nutritionist':{{ nutritionist.id }}, 'consultation':{{consultation.id }}},
+         data: {'token': token, 'nutritionist':{{ nutritionist.id }}, 'consultation':{{consultation.id }}, 'amount':{{ nutritionist.consultation_price }}},
          type: 'POST',
          dataType: 'json',
          cotentType: 'application/json',

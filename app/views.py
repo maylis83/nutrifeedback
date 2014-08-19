@@ -4,12 +4,15 @@ from datetime import date
 
 from django.http import HttpResponse, Http404, HttpResponseRedirect, HttpResponseBadRequest
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponseRedirect
+
 from django.conf import settings
 from django.db.models import Q
 
-from django.contrib.auth.decorators import login_required
+from django.template.loader import render_to_string
+from django.core.mail import EmailMultiAlternatives
 
+from django.contrib.auth.decorators import login_required
+from django.contrib.sites.models import get_current_site
 from payments.models import Customer
 from annoying.decorators import render_to, ajax_request
 
@@ -17,8 +20,10 @@ from .forms import StripeTokenForm, ChargeForm
 from .models import HealthSurveyForm, ConsultationForm, Nutritionist, Credential, Demographic, Specialty, Availability, Consultation
 
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+
 from django.core.urlresolvers import reverse
+
+from django_mandrill.mail import MandrillTemplateMail
 
 @render_to('index.html')
 def index(request):
@@ -163,18 +168,29 @@ def upcoming_consultations(request):
             'consultations':consultations
           }
 
+
 def payment(request):
    #import ipdb
    #ipdb.set_trace()
 
    print "N: " + str(request.POST['nutritionist'])
-   print "C: " +str(request.POST['consultation'])
+   print "C: " + str(request.POST['consultation'])
    print str(request.POST['token[id]'])
    print str(request.POST['token[card][id]'])
 
-   create_customer(request)
-   charge_customer(request)
+   amount = request.POST['nutritionist']
+   card = request.POST['token[card][id]']
 
+   email_user(request)
+   email_nutritionist(request)
+
+   # key is missing
+
+   customer = Customer.create(request.user, card=card, charge_immediately=False)
+   print str(customer)
+
+   r = customer.charge(amount, description="nutrifeedback")
+   print str(r)
 
    return HttpResponseRedirect('/')
 
@@ -182,9 +198,6 @@ def payment(request):
    #consultation = Consultation.objects.get(id=consultation)
    #consultation.paid = True
 
-
-   # TODO send user email
-   # TODO send provider email
 
 
 
@@ -229,6 +242,7 @@ def _404(request):
     """for testing purposes"""
     raise Http404
 
+
 @ajax_request
 @login_required
 def create_customer(request):
@@ -238,6 +252,7 @@ def create_customer(request):
     card = form.cleaned_data['id']
     customer = Customer.create(request.user, card=card, charge_immediately=False)
     return {}
+
 
 @login_required
 def charge_customer(request):
@@ -249,3 +264,45 @@ def charge_customer(request):
     amount = form.cleaned_data['amount']
     customer.charge(amount, description="nutrifeedback")
     return HttpResponseRedirect("/")
+
+
+def email_user(request):
+   current_site = get_current_site(request)
+   domain = current_site.domain # not being set, is example.com
+
+   email = request.user.email
+
+   print str(current_site)
+   print str(domain)
+
+   plain_body = render_to_string("user-email.txt", {"domain": domain,})
+   html_body = render_to_string("user-email.html", {"domain": domain,})
+
+   subject, from_email, to = 'Upcoming consultation', 'info@nutrifeedback.com', email
+   text_content = plain_body
+   html_content = html_body
+   msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+   msg.attach_alternative(html_content, "text/html")
+   #msg.content_subtype = "html" # with this gmail shows plain_body, link is clickable. Yahoo mail shows plain_body, link is not clickable
+   msg.send()
+
+
+def email_nutritionist(request):
+   current_site = get_current_site(request)
+   domain = current_site.domain # not being set, is example.com
+
+   email = request.user.email
+
+   print str(current_site)
+   print str(domain)
+
+   plain_body = render_to_string("nutritionist-email.txt", {"domain": domain,})
+   html_body = render_to_string("nutritionist-email.html", {"domain": domain,})
+
+   subject, from_email, to = 'Upcoming consultation', 'info@nutrifeedback.com', email
+   text_content = plain_body
+   html_content = html_body
+   msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+   msg.attach_alternative(html_content, "text/html")
+   #msg.content_subtype = "html" # with this gmail shows plain_body, link is clickable. Yahoo mail shows plain_body, link is not clickable
+   msg.send()

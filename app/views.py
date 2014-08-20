@@ -35,7 +35,7 @@ def survey(request):
       form = HealthSurveyForm(request.POST)
       if form.is_valid():
          form.save()
-         return HttpResponseRedirect('/')
+         return HttpResponseRedirect(reverse('recommended-nutritionists'))
    else:
       form = HealthSurveyForm()
 
@@ -132,10 +132,21 @@ def consultation(request, nutritionist_id, consultation_id):
 
    stripe_price = int(nutritionist.consultation_price) * 100
 
+   #import ipdb
+   #ipdb.set_trace()
+
+   if hasattr(request.user, 'customer'):
+      print "TRUE user.customer: " + str(request.user.customer)
+      user_has_stripe_account = True
+   else:
+      print "no stripe customer FALSE"
+      user_has_stripe_account = False
+
    return { 'nutritionist':nutritionist,
             'availability':availability[0],
             'stripe_price':stripe_price,
-            'consultation':consultation
+            'consultation':consultation,
+            'user_has_stripe_account':user_has_stripe_account
           }
 
 
@@ -240,14 +251,18 @@ def charge_customer(request):
     print "amount: " + str(amount)
     customer.charge(amount, description="nutrifeedback")
 
-    n = form.cleaned_data['nutritionist']
-    print "n: " + str(n)
+    nutritionist_id = form.cleaned_data['nutritionist']
+    print "n: " + str(nutritionist_id)
 
-    c = form.cleaned_data['consultation']
-    print "c: " + str(c)
+    consultation_id = form.cleaned_data['consultation']
+    print "c: " + str(consultation_id)
 
-    email_user(request)
-    email_nutritionist(request)
+    consultation = Consultation.objects.get(id=consultation_id)
+    consultation.paid = True
+    consultation.save()
+
+    email_user(request, nutritionist_id, consultation_id)
+    email_nutritionist(request, nutritionist_id, consultation_id)
 
     return HttpResponseRedirect("/")
 
@@ -255,8 +270,7 @@ def charge_customer(request):
     #DETAIL:  Key (user_id)=(1) already exists.
 
 
-
-def email_user(request):
+def email_user(request, nutritionist_id, consultation_id):
    current_site = get_current_site(request)
    domain = current_site.domain # not being set, is example.com
 
@@ -277,7 +291,7 @@ def email_user(request):
    msg.send()
 
 
-def email_nutritionist(request):
+def email_nutritionist(request, nutritionist_id, consultation_id):
    current_site = get_current_site(request)
    domain = current_site.domain # not being set, is example.com
 

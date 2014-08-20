@@ -96,7 +96,7 @@ Nutrifeedback
             </div>
  -->
              <div class="col-md-4 no-pad">
-               <a class="btn btn-primary" id="pay-button" href="">Pay</a>
+               <a class="btn btn-primary" id="pay-button" href="#">Pay</a>
             </div>
             <div class="row">
               <div class="col-md-12 no-pad">
@@ -114,42 +114,46 @@ Nutrifeedback
 <div class="recommended-bottom-spacer"></div>
 </div>
 
-
-
 <script src="//checkout.stripe.com/v2/checkout.js"></script>
 
 <script>
  chargeCustomer = function(amount, nutritionist, consultation){
-   $("<form method='post' action='{% url "charge_customer" %}'> {% csrf_token %}<input name='amount' value=" + amount +"><input name='nutritionist' value=" + nutritionist +"><input name='consultation' value=" + consultation +"></form>").appendTo("body").submit();
+   $("<form method='post' action='{% url "charge_customer" %}'>{% csrf_token %}<input name='amount' value=" + amount +"><input name='nutritionist' value=" + nutritionist +"><input name='consultation' value=" + consultation +"></form>").appendTo("body").submit();
  }
 </script>
-
 <script>
-  var handler = StripeCheckout.configure({
-   key: "{{SETTINGS.STRIPE_PUBLIC_KEY}}",
-   image: "{% static 'img/home_logo.png' %}",
-   token: function(token, args) {
-     $.post("{% url 'create_customer' %}", token).then(function(){
-       var amount = {{ nutritionist.consultation_price }};
-       var nutritionist = {{ nutritionist.id }};
-       var consultation = {{consultation.id }},
-       //response = chargeCustomer(amount, 1, 1);
-       response = chargeCustomer(amount, nutritionist, consultation);
-     })
-    }
-  });
-
-  document.getElementById('pay-button').addEventListener('click', function(e) {
+{% if user_has_stripe_account == True %}
+   document.getElementById('pay-button').addEventListener('click', function(e) {
+      console.log("clicked on pay with stripe account");
+      var amount = {{ nutritionist.consultation_price }};
+      var nutritionist = {{ nutritionist.id }};
+      var consultation = {{consultation.id }};
+      chargeCustomer(amount, nutritionist, consultation);
+   });
+{% else %}
+   var handler = StripeCheckout.configure({
+      key: "{{SETTINGS.STRIPE_PUBLIC_KEY}}",
+      image: "{% static 'img/home_logo.png' %}",
+      token: function(token, args) {
+         $.post("{% url 'create_customer' %}", token).then(function(){
+            var amount = {{ nutritionist.consultation_price }};
+            var nutritionist = {{ nutritionist.id }};
+            var consultation = {{consultation.id }};
+            response = chargeCustomer(amount, nutritionist, consultation);
+         })
+      }
+   });
+   document.getElementById('pay-button').addEventListener('click', function(e) {
     // Open Checkout with further options
-    handler.open({
-      name: 'Nutrifeedback',
-      description: 'Consultation with {{ nutritionist.first_name }} {{ nutritionist.last_name }}',
-      amount: {{ stripe_price }},
-      email: '{{ user.email }}',
-      allowRememberMe: false,
-    });
+      handler.open({
+         name: 'Nutrifeedback',
+         description: 'Consultation with {{ nutritionist.first_name }} {{ nutritionist.last_name }}',
+         amount: {{ stripe_price }},
+         email: '{{ user.email }}',
+         allowRememberMe: false,
+       });
     e.preventDefault();
-  });
-
+   });
+{% endif %}
 </script>
 {% endblock content %}

@@ -47,9 +47,7 @@
         g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
         s.parentNode.insertBefore(g,s)}(document,'script'));
 
- <!-- Copied from Django CSRF docs START -->
-    <script>
-    // using jQuery
+    <!-- Copied from Django CSRF docs START -->
     function getCookie(name) {
         var cookieValue = null;
         if (document.cookie && document.cookie != '') {
@@ -71,12 +69,8 @@
         return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
     }
 
-  function baseAjaxSetup(dump) {
+    function baseAjaxSetup(dump) {
         var token = getCookie('csrftoken'); // calls code from docs in base.html
-
-        if (dump) {
-
-        }
 
         $.ajaxSetup({
             crossDomain: false, // obviates need for sameOrigin test
@@ -87,11 +81,6 @@
             }
         });
     }
-
-
-
-
-
     </script>
   </body>
 </html>

@@ -41,7 +41,7 @@ class Nutritionist(TimeStampedModel):
    consultation_price = models.IntegerField()
 
    def get_full_name(self):
-        return unicode(self.first_name) + " " + unicode(self.last_name)
+        return unicode(self.first_name) + " " + unicode(self.last_name) + "  " + unicode(self.city) + ", " + unicode(self.state)
 
    def __unicode__(self):
         return self.get_full_name()
@@ -167,8 +167,8 @@ class Availability(TimeStampedModel):
    "  W " + unicode(self.wednesday_early) + " " + unicode(self.wednesday_afternoon) + " " + unicode(self.wednesday_evening) + " " + \
    "  TR " + unicode(self.thursday_early) + " " + unicode(self.thursday_afternoon) + " " + unicode(self.thursday_evening) + " " + \
    "  F " + unicode(self.friday_early) + " " + unicode(self.friday_afternoon) + " " + unicode(self.friday_evening) + " " + \
-   "  S " + unicode(self.saturday_early) + " " + unicode(self.saturday_afternoon) + " " + unicode(self.saturday_evening) + " " + \
-   "  S " + unicode(self.sunday_early) + " " + unicode(self.sunday_afternoon) + " " + unicode(self.sunday_evening))
+   "  Sa " + unicode(self.saturday_early) + " " + unicode(self.saturday_afternoon) + " " + unicode(self.saturday_evening) + " " + \
+   "  Su " + unicode(self.sunday_early) + " " + unicode(self.sunday_afternoon) + " " + unicode(self.sunday_evening))
 
 
 class HealthSurvey(TimeStampedModel):

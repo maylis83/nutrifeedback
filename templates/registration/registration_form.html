@@ -5,11 +5,12 @@
 {% endblock title %}
 
 {% block content %}
-
+  <div id="registration-padding"></div>
   <div class="registration-box">
-    <h1>Signup</h1>
+  <div class="registration-title">Signup</div>
     <form action='/account/register/{% if next %}?next={{ next }}{% endif %}' method="POST">
       {% csrf_token %}
+      <div class="registration-label">
       <table>
         <tr>
           <td> {{ form.email.label_tag }}</td>
@@ -45,16 +46,18 @@
           <td> {{ form.tos.errors }}</td>
         </tr>
       </table>
+      </div>
       <div class="clear"></div>
 
-      <button class="replace-this-class">Submit</button>
-        <!-- replace the above button class with the class(es) you make in _buttons.scss -->
-
+      <button class="btn btn-primary view-profile-button registration-submit">Submit</button>
       <div class="clear"></div>
+<!--
       <p class='registration'>Or Login with Facebok</p>
       <a href='/login/facebook'><img src='{% static 'img/button_fb.png' %}'/></a>
+ -->
     </form>
   </div>
+  <div id="registration-padding"></div>
 
 {% endblock content %}
 {% block body_media %}
@@ -66,4 +69,3 @@ $(function(){
 })
 </script>
 {% endblock %}
-

@@ -78,6 +78,7 @@ def nutritionist(request, id):
             'specialties':specialties,
             'availability':availability[0] }
 
+
 def appointment_in_future(request):
    day = int(request.POST['date_day'])
    month = int(request.POST['date_month'])
@@ -110,6 +111,8 @@ def schedule_consultation(request, id):
             return HttpResponseRedirect(reverse("consultation", args=(id, consultation.id)))
          else:
             form.error = "Consultation must occur in the future."
+      else:
+         form.error = "Invalid date and time."
    else:
       form = ConsultationForm()
 

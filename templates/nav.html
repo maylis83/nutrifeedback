@@ -6,19 +6,18 @@
       <div class="col-md-1"><a href="{% url 'index' %}" target="_blank"><img class="logo" src='{% static 'img/home_logo.png' %}'/></a></div>
       <div class="col-md-5"></div>
       {% if user.is_authenticated %}
-        <div class="col-md-1 no-pad">
-
-<div id="dropdown-block">
-<a class="dropdown" href="#">Welcome</a>
-<ul class="dropdown-list">
-    <li><a href="{% url 'auth_logout' %}">Logout</a></li>
-    <li><a href="{% url 'survey' %}">Survey</a></li>
-    <li><a href="{% url 'my-nutritionists' %}">My Nutritionists</a></li>
-    <li><a href="{% url 'upcoming-consultations' %}">Upcoming Consultations</a></li>
-    <li><a href="{% url 'recommended-nutritionists' %}">Recommended Nutritionists</a></li>
-</ul>
-</div>
-</div>
+        <div class="col-md-2 no-pad">
+          <div id="dropdown-block">
+            <a class="dropdown" href="#">Welcome, X{{ user.first_name }}X</a>
+            <ul class="dropdown-list">
+              <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+              <li><a href="{% url 'survey' %}">Survey</a></li>
+              <li><a href="{% url 'my-nutritionists' %}">My Nutritionists</a></li>
+              <li><a href="{% url 'upcoming-consultations' %}">Upcoming Consultations</a></li>
+              <li><a href="{% url 'recommended-nutritionists' %}">Recommended Nutritionists</a></li>
+            </ul>
+          </div>
+        </div>
         <div class="col-md-1"><a class="btn btn-primary" id="header-sign-out-button" href="{% url 'auth_logout' %}">Sign Out</a></div>
       {% else %}
         <div class="col-md-1 no-pad"><a class="btn btn-success" id="sign-in-button" href="{% url 'auth_login' %}">Sign In</a></div>

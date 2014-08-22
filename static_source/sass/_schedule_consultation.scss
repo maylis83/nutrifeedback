@@ -52,7 +52,11 @@
 }
 
 #time-column {
-  margin-left: -50px;
+  margin-left: -30px;
+}
+
+#calendar-column {
+  margin-left: -22px;
 }
 
 #id_time {
@@ -65,4 +69,12 @@
   font-size: 18px;
   margin-left: 15px;
   margin-top: -25px;
+}
+
+#calendar-trigger {
+  margin-top: 10px;
+}
+
+.auto-width {
+  width: auto !important;
 }

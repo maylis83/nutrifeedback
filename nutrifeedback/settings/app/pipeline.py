@@ -5,6 +5,7 @@ PIPELINE_CSS = {
     'screen': {
         'source_filenames': (
             'sass/style.scss',
+             'css/vendor/jquery-ui.min.css',
         ),
         'output_filename': 'css/screen.css',
         'variant': 'datauri',
@@ -35,6 +36,7 @@ PIPELINE_JS = {
             'js/vendor/jquery-1.11.0.min.map',
             'js/vendor/bootstrap.min.js',
             'js/vendor/select2.min.js',
+            'js/vendor/jquery-ui.min.js',
             ),
         'output_filename': 'js/vendor.js',
         'manifest': True,

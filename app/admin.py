@@ -17,8 +17,8 @@ class AvailabilityInline(admin.StackedInline):
 
 
 class CredentialInline(admin.StackedInline):
-   model = Credential.nutritionist.through
-   Credential.nutritionist.through.__unicode__ = lambda x: ''
+   model = Credential
+   #Credential.nutritionist.through.__unicode__ = lambda x: ''
    extra = 5
    max_num = 15
    verbose_name = "Credential"

@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic.base import TemplateView
-
+from .signals import * #ensure that the signals are attatched via import
+from django.contrib.auth import logout
+from django.http import HttpResponseRedirect
 
 urlpatterns = patterns('app.views',
     # Examples:
@@ -19,5 +21,10 @@ urlpatterns = patterns('app.views',
     url(r'^my-nutritionists', 'my_nutritionists', name='my-nutritionists'),
 )
 
-from .signals import * #ensure that the signals are attatched via import
+def custom_logout(request):
+    logout(request)
+    return HttpResponseRedirect("/")
+
+
+urlpatterns += patterns('app.views', (r'^logout/$', custom_logout))
 urlpatterns += patterns('app.views', (r'', include('account.urls')))

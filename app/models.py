@@ -86,7 +86,8 @@ class Credential(TimeStampedModel):
 
    type = models.CharField(max_length=255, choices=CREDENTIAL_TYPE)
    description = models.CharField(max_length=1024)
-   nutritionist = models.ManyToManyField('Nutritionist', related_name='nutritionist_credential', null=True, blank=True)
+   #nutritionist = models.ManyToManyField('Nutritionist', related_name='nutritionist_credential', null=True, blank=True)
+   nutritionist = models.ForeignKey('Nutritionist', related_name='nutritionist_credential', null=True, blank=True)
 
    def __unicode__(self):
         #return self.nutritionist.get_full_name() + unicode(self.type) + " " + unicode(self.description)

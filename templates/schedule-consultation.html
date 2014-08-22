@@ -36,12 +36,18 @@ Nutrifeedback
 
 <div class="row no-pad">
 <div id="consultation-schedule-form-block">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="row">
       Date
     </div>
     <div class="row">
       {{ form.date }}
+    </div>
+  </div>
+  <div class="col-md-1">
+    <div class="row">&nbsp</div>
+    <div class="row no-pad">
+      <a href="javascript:void(0);" onclick="$.datepicker._showDatepicker($('#inputID')[0]);"><img id="" src='{% static 'img/date.png' %}'/></a>
     </div>
   </div>
   <div class="col-md-2" id="time-column">
@@ -56,6 +62,7 @@ Nutrifeedback
 <div class="form-error">{{ form.error }}</div>
 </div>
 
+<input type="hidden" id="inputID"/>
 
 <div id="consultation-sub-heading">In Person or Digital Consultation</div>
 
@@ -76,6 +83,23 @@ Nutrifeedback
 
 
 <script>
+/*
+$('#inputID').datepicker("getDate")
+Wed Aug 20 2014 00:00:00 GMT-0400 (EDT)
+d = $('#inputID').datepicker("getDate")
+Wed Aug 20 2014 00:00:00 GMT-0400 (EDT)
+d
+Wed Aug 20 2014 00:00:00 GMT-0400 (EDT)
+$.datepicker.formatDate('mm dd yy, d)
+SyntaxError: Unexpected token ILLEGAL
+$.datepicker.formatDate('mm dd yy', d)
+"08 20 2014"
+$.datepicker.formatDate('MM dd yy', d)
+"August 20 2014"
+*/
+
+
+
 var num = {}
 num["January"]   = "0";
 num["February"]  = "1";
@@ -91,6 +115,19 @@ num["November"]  = "10";
 num["January"]   = "11";
 
 $(document).ready(function(){
+    $('#inputID').datepicker({ dateFormat: "mm dd yy",
+                               minDate: 0 });
+
+    $('#inputID').datepicker("option", {
+       onSelect: function(dateText, inst){
+          date = dateText.match(/^(\d{2})\s(\d{2})\s(\d{4})/);
+
+          $("#id_date_month").val(parseInt(date[1]));
+          $("#id_date_day").val(parseInt(date[2]));
+          $("#id_date_year").val(parseInt(date[3]));
+       }
+    });
+
     $("#id_date_month, #id_date_year").click(function(){
         var month = $("#id_date_month :selected").text();
 

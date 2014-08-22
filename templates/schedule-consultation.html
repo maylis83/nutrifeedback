@@ -7,6 +7,7 @@ Nutrifeedback
 {% block content %}
 {% load static from staticfiles %}
 <div class="outer-canvas">
+  <div class="container">
     <div class="row line-no-pad">
       <div class="col-md-2 no-pad"></div>
       <div class="col-md-1 no-pad">
@@ -14,6 +15,7 @@ Nutrifeedback
       </div>
     </div>
     <div class="inner-canvas">
+
 <form action="{% url 'schedule-consultation' nutritionist.id %}" method="post">
 {% csrf_token %}
 
@@ -41,13 +43,7 @@ Nutrifeedback
       Date
     </div>
     <div class="row">
-      {{ form.date }}
-    </div>
-  </div>
-  <div class="col-md-1" id="calendar-column">
-    <div class="row">&nbsp</div>
-    <div class="row">
-      <a href="javascript:void(0);" onclick="$.datepicker._showDatepicker($('#inputID')[0]);"><img id="calendar-trigger" src='{% static 'img/date.png' %}'/></a>
+      {{ form.date }}      <a href="javascript:void(0);" onclick="$.datepicker._showDatepicker($('#inputID')[0]);"><img id="calendar-trigger" src='{% static 'img/date.png' %}'/></a>
     </div>
   </div>
   <div class="col-md-3" id="time-column">
@@ -61,6 +57,7 @@ Nutrifeedback
 </div>
 <div class="form-error">{{ form.error }}</div>
 </div>
+
 
 <input type="hidden" id="inputID"/>
 
@@ -79,7 +76,7 @@ Nutrifeedback
 </form>
 <div class="recommended-bottom-spacer"></div>
 </div>
-
+</div>
 
 
 <script>
@@ -97,8 +94,6 @@ $.datepicker.formatDate('mm dd yy', d)
 $.datepicker.formatDate('MM dd yy', d)
 "August 20 2014"
 */
-
-
 
 var num = {}
 num["January"]   = "0";

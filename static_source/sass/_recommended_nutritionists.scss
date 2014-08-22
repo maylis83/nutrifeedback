@@ -54,10 +54,11 @@
 }
 
 #view-profile {
-  margin-left: -14px;
-  font-family: "robotomedium";
-  font-size: 16px;
-  height: 40px;
+  @extend .button-style;
+  //margin-left: -14px;
+  //font-family: "robotomedium";
+  //font-size: 16px;
+  //height: 40px;
   //border-color: #43ACD0;
 }
 
@@ -78,6 +79,7 @@
   font-size: 15px;
   font-family: "robotomedium";
   margin-top: 35px;
+  margin-left: -80px;
   background: none !important;
   padding: 0 !important;
   cursor: pointer;

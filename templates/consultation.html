@@ -7,6 +7,7 @@ Nutrifeedback
 {% block content %}
 {% load static from staticfiles %}
 <div class="outer-canvas">
+  <div class="container">
   <div class="row line-no-pad">
     <div class="col-md-2 no-pad"></div>
     <div class="col-md-1 no-pad">
@@ -56,37 +57,39 @@ Nutrifeedback
             </div>
             <div class="row">
             </div>
-            <div class="row" id="">
+            <div class="consultation-details-block">
+            <div class="row consultation-details-spacer" id="">
               <div class="col-md-1 no-pad">
-                <img id="" src='{% static 'img/date.png' %}'/>
+                <img src='{% static 'img/date.png' %}'/>
               </div>
               <div class="col-md-6 no-pad">
                 <div class="consultation-details">{{ consultation.date }}</div>
               </div>
             </div>
-            <div class="row" id="">
+            <div class="row consultation-details-spacer" id="">
               <div class="col-md-1 no-pad">
-                <img id="" src='{% static 'img/time.png' %}'/>
+                <img src='{% static 'img/time.png' %}'/>
               </div>
               <div class="col-md-11 no-pad">
                 <div class="consultation-details">{{ consultation.get_time_display }}</div>
               </div>
             </div>
-            <div class="row" id="">
+            <div class="row consultation-details-spacer" id="">
               <div class="col-md-1 no-pad">
-                <img id="" src='{% static 'img/pin.png' %}'/>
+                <img src='{% static 'img/pin.png' %}'/>
               </div>
               <div class="col-md-11 no-pad">
                <div class="consultation-details">{{ nutritionist.address }}. {{ nutritionist.city }}, {{ nutritionist.state }} {{ nutritionist.zip }}</div>
               </div>
             </div>
-            <div class="row" id="">
+            <div class="row consultation-details-spacer" id="">
               <div class="col-md-1 no-pad">
-                <img id="" src='{% static 'img/skype.png' %}'/>
+                <img src='{% static 'img/skype.png' %}'/>
               </div>
               <div class="col-md-11 no-pad">
                 <div class="consultation-details">{{ nutritionist.skype_name }}</div>
               </div>
+            </div>
             </div>
 
             <div class="row">
@@ -112,6 +115,7 @@ Nutrifeedback
   <div class="bottom-spacer"></div>
 </div>
 <div class="recommended-bottom-spacer"></div>
+</div>
 </div>
 
 <script src="//checkout.stripe.com/v2/checkout.js"></script>

@@ -7,6 +7,7 @@ Nutrifeedback
 {% block content %}
 {% load static from staticfiles %}
   <div class="outer-canvas">
+  <div class="container">
       <div class="row line-no-pad">
         <div class="col-md-2 no-pad"></div>
         <div class="col-md-1 no-pad">
@@ -55,7 +56,7 @@ Nutrifeedback
               </div>
               <div>
                 <div class="row">
-                  <a class="btn btn-primary no-pad" id="view-profile" href="{% url 'nutritionist' consultation.nutritionist.id %}">View Consultation</a>
+                  <a class="btn btn-primary no-pad" id="view-profile" href="{% url 'consultation' consultation.nutritionist.id consultation.id%}">View My Consultation</a>
                 </div>
               </div>
             </div>
@@ -75,4 +76,5 @@ Nutrifeedback
     </div>
     <div class="recommended-bottom-spacer"></div>
   </div>
+</div>
 {% endblock content %}

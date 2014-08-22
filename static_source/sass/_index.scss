@@ -16,9 +16,9 @@ img {
   padding: 10px 12px !important;
 }
 
-.logo {
-  max-width: none;
-}
+
+
+
 
 .slogan {
   font-size: 50px;
@@ -123,30 +123,37 @@ img {
 }
 
 #icon-block {
-  margin-left: 0px;
+  margin-left: -31px;
 }
 
 .mission-box {
   background-color: #f1f1f1;
   padding-bottom: 60px;
   padding-top: 60px;
+  margin-top: 65px;
   width: 100%;
   display: block;
 }
 
 .tagline-box {
   min-height: 120px;
-  width: 100%;
+  //width: 100%;
   background-color: #40b985;
   display: block;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .tagline-button {
-  margin-top: 43px;
+  margin-top: 29px;
   background-color: #FFFFFF !important;
   color: #5d6964 !important;
   //border: none;
   //border-radius: 2px;
+  font-family: "robotomedium";
+  font-size: 16px;
+  width: 160px;
+  height: 60px;
 }
 
 .mission-photo {
@@ -299,7 +306,7 @@ img {
 
 #header-sign-out-button {
   float: right;
-  margin-right: 0px !important;
+  margin-right: -75px !important;
   margin-top: 38px;
   width: 89px;
   background-color: #63C49A;

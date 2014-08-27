@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT hfg.wsgi:application
+web: waitress-serve --port=$PORT nutrifeedback.wsgi:application

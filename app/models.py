@@ -40,6 +40,9 @@ class Nutritionist(TimeStampedModel):
    headshot = models.ImageField(upload_to=file_url("/nutritionist_headshots"), default='/nutritionist_headshots/none.jpg')
    consultation_price = models.IntegerField()
 
+   def first_last(self):
+      return unicode(self.first_name) + " " + unicode(self.last_name)
+
    def get_full_name(self):
         return unicode(self.first_name) + " " + unicode(self.last_name) + "  " + unicode(self.city) + ", " + unicode(self.state)
 

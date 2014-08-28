@@ -19,7 +19,7 @@ from annoying.decorators import render_to, ajax_request
 from .forms import StripeTokenForm, ChargeForm
 from .models import HealthSurveyForm, ConsultationForm, Nutritionist, Credential, Demographic, Specialty, Availability, Consultation
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from django.core.urlresolvers import reverse
 
@@ -282,8 +282,10 @@ def email_user(request, nutritionist_id, consultation_id):
    print str(current_site)
    print str(domain)
 
-   plain_body = render_to_string("user-email.txt", {"domain": domain,})
-   html_body = render_to_string("user-email.html", {"domain": domain,})
+   consultation = get_object_or_404(Consultation, id=consultation_id)
+
+   plain_body = render_to_string("user-email.txt", {"domain": domain, "consultation": consultation })
+   html_body = render_to_string("user-email.html", {"domain": domain, "consultation": consultation })
 
    subject, from_email, to = 'Upcoming consultation', 'info@nutrifeedback.com', email
    text_content = plain_body
@@ -303,8 +305,10 @@ def email_nutritionist(request, nutritionist_id, consultation_id):
    print str(current_site)
    print str(domain)
 
-   plain_body = render_to_string("nutritionist-email.txt", {"domain": domain,})
-   html_body = render_to_string("nutritionist-email.html", {"domain": domain,})
+   consultation = get_object_or_404(Consultation, id=consultation_id)
+
+   plain_body = render_to_string("nutritionist-email.txt", {"domain": domain, "consultation": consultation })
+   html_body = render_to_string("nutritionist-email.html", {"domain": domain, "consultation": consultation })
 
    subject, from_email, to = 'Upcoming consultation', 'info@nutrifeedback.com', email
    text_content = plain_body

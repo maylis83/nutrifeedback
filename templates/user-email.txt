@@ -1,1 +1,6 @@
-user email {{ domain }}
+user email txt
+{{ domain }}
+{{ consultation.nutritionist.first_last }}
+{{ consultation.date }}
+{{ consultation.time }}
+{{ user.first_name }}

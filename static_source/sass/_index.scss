@@ -16,10 +16,6 @@ img {
   padding: 10px 12px !important;
 }
 
-
-
-
-
 .slogan {
   font-size: 50px;
   text-align: center;
@@ -154,6 +150,7 @@ img {
   font-size: 16px;
   width: 160px;
   height: 60px;
+  padding-top: 16px !important;
 }
 
 .mission-photo {
@@ -252,6 +249,29 @@ img {
 .carousel-control-next {
   float: right;
 }
+
+//#myCarousel > div.indicator > ol > li.active
+
+.carousel-indicators li {
+  background-color: #F1F1F1 !important;
+  width: 7px !important;
+  height: 7px !important;
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+.carousel-indicators li.active {
+  background-color: #40B985 !important;
+  width: 8px !important;
+  height: 8px !important;
+}
+
+// overide bootstrap
+.carousel-indicators {
+   //left: 100% !important;
+   bottom: -60px !important;
+}
+
 
 .circular-headshot {
   width: 76px;

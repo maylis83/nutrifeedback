@@ -7,206 +7,203 @@ Nutrifeedback
 {% block content %}
 {% load static from staticfiles %}
 
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="splash-box">
-          <p class="slogan">Healthy Advice, Healthy Body.</p>
-          <p class="slogan-detail">Get unlimited access to the best local nutritionists and unbelievable discounts on in-person nutritional consultations. Nutrifeedback makes your health goals clear, simple, and attainable.</p>
-          <center><a class="btn btn-primary wide-button button-style" href="{% url 'registration_register' %}">Get Started</a></center>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-
-      <br>
-      <p class="section-title">How Nutrifeedback Works</p>
-
-      <div class="row">
-        <div class="col-md-2 no-pad">
-          <img class="step-img" src='{% static 'img/home_set_goals.png' %}'/>
-          <p class="step">Get Connected</p>
-          <p class="step-desc">Find the qualiﬁed, licensed local nutritionist who’s right for you.</p>
-        </div>
-        <div class="col-md-3 no-pad"><img class="dotted" src='{% static 'img/home_dotted.png' %}'/></div>
-        <div class="col-md-2 no-pad">
-          <img class="step-img" src='{% static 'img/home_find.png' %}'/>
-          <p class="step">Get Together</p>
-          <p class="step-desc">Meet with your nutritionist to check up on your progress—for less than half the standard fee.</p>
-        </div>
-        <div class="col-md-3 no-pad"><img class="dotted" src='{% static 'img/home_dotted.png' %}'/></div>
-        <div class="col-md-2 no-pad">
-          <img class="step-img" src='{% static 'img/home_connect.png' %}'/>
-          <p class="step">Get Talking</p>
-          <p class="step-desc">Discuss your health goals and create a plan. Get your health questions answered in 48 hours or less.</p>
-        </div>
-      </div>
-
-      <center><a class="btn btn-primary wide-button button-style" href="{% url 'registration_register' %}">Start Now</a></center>
-
-      </br>
-      <div class="doit">
-      <div class="row">
-      <div class="mission-box">
-        <p class="section-title">Our Mission</p>
-
-        <p class="mission-text">There’s more information about nutrients and our bodies available than ever before, so being
-        healthy should be easy, right? Unfortunately not. It’s hard to know where to begin, what to
-        believe, and how to ﬁnd the time to read through all the studies, charts, and articles. So, by
-        connecting people who truly care about their health (like you) with trusted nutritionists who love
-        treating their clients as individuals, Nutrifeedback hopes to help millions of people live healthier,
-        happier lives. You deserve to feel better than ever. And with the right nutritional advice for your
-        body, goals, and lifestyle, we think you will.</p>
-
-        <div class="shrink">
-        <div class="row collage-container">
-          <div class="col-md-8 photo-one">
-            <div class="row collage-wide">
-              <img class="mission-photo col-md-12" src='{% static 'img/home_fruit.png' %}'/>
-            </div>
-            <div class="row collage-inner">
-              <div class="col-md-6 photo-two"><img class="mission-photo" src='{% static 'img/home_bread.png' %}'/></div>
-              <div class="col-md-6 photo-three"><img class="mission-photo" src='{% static 'img/home_soup.png' %}'/></div>
-            </div>
-          </div>
-          <div class="col-md-4 photo-four"><img class="mission-photo" src='{% static 'img/home_tea.png' %}'/></div>
-        </div>
-      </div>
-      </div>
-
-      <div class="testimonial-box">
-       <div id="testimonial-section-heading">
-        <p class="section-title">What Every Body’s Saying</p>
-        </div>
-
-      <div class="row">
-        <div class="col-md-1 no-pad"><a class="carousel-control-prev" href="#myCarousel" data-slide="prev"><img class="" src='{% static 'img/carousel_prev.png' %}'/></a></div>
-        <div class="col-md-10 no-pad">
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <div class="row">
-        <div class="col-md-12 no-pad">
-        <div class="indicator">
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active">o</li>
-            <li data-target="#myCarousel" data-slide-to="1">o</li>
-            <li data-target="#myCarousel" data-slide-to="2">o</li>
-            <li data-target="#myCarousel" data-slide-to="3">o</li>
-            <li data-target="#myCarousel" data-slide-to="4">o</li>
-          </ol>
-          </div>
-        </div>
-      </div>
-
-  <div class="carousel-inner">
-    <div class="active item">
-      <div class="row">
-        <div class="col-md-1 no-pad"></div>
-        <div class="col-md-1 no-pad">
-          <img class="circular-headshot" src='{% static 'img/testimonial-1.jpg' %}'/>
-        </div>
-        <div class="col-md-9 no-pad">
-          <div class="quote-block">
-            <div class="user-quote">“I love my friends, but they have no clue what to do when it comes to eating right or dieting.
-              Nutrifeedback set me up with an awesome nutritionist and now I’ve ﬁnally got a healthy kitchen.”</div>
-            <br/>
-            <div class="user-quote-name">Jessica Schweigart</div>
-          </div>
-        </div>
-        <div class="col-md-1 no-pad"></div>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="row">
-        <div class="col-md-1 no-pad"></div>
-        <div class="col-md-1 no-pad">
-          <img class="circular-headshot" src='{% static 'img/testimonial-2.jpg' %}'/>
-        </div>
-        <div class="col-md-9 no-pad">
-          <div class="quote-block">
-            <div class="user-quote">“Oh my god. Nutrifeedback is the best. I got delicious vegan meal recipes right away and it’s
-              inspired me to start cooking again. I love this site”</div>
-            <br/>
-            <div class="user-quote-name">David Mueller</div>
-          </div>
-        </div>
-        <div class="col-md-1 no-pad"></div>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="row">
-        <div class="col-md-1 no-pad"></div>
-        <div class="col-md-1 no-pad">
-          <img class="circular-headshot" src='{% static 'img/testimonial-3.jpg' %}'/>
-        </div>
-        <div class="col-md-9 no-pad">
-          <div class="quote-block">
-            <div class="user-quote">“My workouts have been going a lot better after I got food tips from a nutritionist I found on
-              Nutrifeedback. Tons more energy, and I’m ﬁnally hitting my ﬁtness goals.”</div>
-            <br/>            <div class="user-quote-name">Sarah Hayes</div>
-          </div>
-        </div>
-        <div class="col-md-1 no-pad"></div>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="row">
-        <div class="col-md-1 no-pad"></div>
-        <div class="col-md-1 no-pad">
-          <img class="circular-headshot" src='{% static 'img/testimonial-4.jpg' %}'/>
-        </div>
-        <div class="col-md-9 no-pad">
-          <div class="quote-block">
-            <div class="user-quote">“Gluten and I are not friends AT ALL, but I’ve been able to ﬁnd things I like and can actually eat
-              thanks to Nutrifeedback. Total life saver.”</div>
-            <br/>
-            <div class="user-quote-name">David Schreck</div>
-          </div>
-        </div>
-        <div class="col-md-1 no-pad"></div>
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="row">
-        <div class="col-md-1 no-pad"></div>
-        <div class="col-md-1 no-pad">
-          <img class="circular-headshot" src='{% static 'img/testimonial-5.jpg' %}'/>
-        </div>
-        <div class="col-md-9 no-pad">
-          <div class="quote-block">
-            <div class="user-quote">“I’m gonna say it… I wouldn’t have ﬁt in my wedding dress if it weren’t for Nutrifeedback.”</div>
-            <div class="user-quote-name">Danielle Berens</div>
-            <br/>
-          </div>
-        </div>
-        <div class="col-md-1 no-pad"></div>
-      </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="splash-box">
+      <p class="slogan">Healthy Advice, Healthy Body.</p>
+      <p class="slogan-detail">Get unlimited access to the best local nutritionists and unbelievable discounts on in-person nutritional consultations. Nutrifeedback makes your health goals clear, simple, and attainable.</p>
+      <center><a class="btn btn-primary wide-button button-style" href="{% url 'registration_register' %}">Get Started</a></center>
     </div>
   </div>
 </div>
+<div class="container">
+  <br>
+  <p class="section-title">How Nutrifeedback Works</p>
 
-</div>
-<div class="col-md-1"><a class="carousel-control-next" href="#myCarousel" data-slide="next"><img class="" src='{% static 'img/carousel_next.png' %}'/></a></div>
-</div>
- </div>
-   <div class="tagline-box">
-     <div class="row">
-       <div class="col-md-1"></div>
-       <div class="col-md-8"><p class="tagline">Get the advice your body needs. Ask your ﬁrst question today.</p></div>
-       <div class="col-md-1"><a class="btn btn-primary btn-lg tagline-button" href="{% url 'registration_register' %}">Start Now</a></div>
+  <div class="row">
+    <div class="col-md-2 no-pad">
+      <img class="step-img" src='{% static 'img/home_set_goals.png' %}'/>
+      <p class="step">Get Connected</p>
+      <p class="step-desc">Find the qualiﬁed, licensed local nutritionist who’s right for you.</p>
+    </div>
+    <div class="col-md-3 no-pad"><img class="dotted" src='{% static 'img/home_dotted.png' %}'/></div>
+    <div class="col-md-2 no-pad">
+      <img class="step-img" src='{% static 'img/home_find.png' %}'/>
+      <p class="step">Get Together</p>
+      <p class="step-desc">Meet with your nutritionist to check up on your progress—for less than half the standard fee.</p>
+    </div>
+    <div class="col-md-3 no-pad"><img class="dotted" src='{% static 'img/home_dotted.png' %}'/></div>
+    <div class="col-md-2 no-pad">
+      <img class="step-img" src='{% static 'img/home_connect.png' %}'/>
+      <p class="step">Get Talking</p>
+      <p class="step-desc">Discuss your health goals and create a plan. Get your health questions answered in 48 hours or less.</p>
+    </div>
+  </div>
+
+  <center><a class="btn btn-primary wide-button button-style" href="{% url 'registration_register' %}">Start Now</a></center>
+
+  </br>
+  <div class="doit">
+  <div class="row">
+  <div class="mission-box">
+    <p class="section-title">Our Mission</p>
+
+    <p class="mission-text">There’s more information about nutrients and our bodies available than ever before, so being
+    healthy should be easy, right? Unfortunately not. It’s hard to know where to begin, what to
+    believe, and how to ﬁnd the time to read through all the studies, charts, and articles. So, by
+    connecting people who truly care about their health (like you) with trusted nutritionists who love
+    treating their clients as individuals, Nutrifeedback hopes to help millions of people live healthier,
+    happier lives. You deserve to feel better than ever. And with the right nutritional advice for your
+    body, goals, and lifestyle, we think you will.</p>
+
+    <div class="shrink">
+    <div class="row collage-container">
+      <div class="col-md-8 photo-one">
+        <div class="row collage-wide">
+          <img class="mission-photo col-md-12" src='{% static 'img/home_fruit.png' %}'/>
+        </div>
+        <div class="row collage-inner">
+          <div class="col-md-6 photo-two"><img class="mission-photo" src='{% static 'img/home_bread.png' %}'/></div>
+          <div class="col-md-6 photo-three"><img class="mission-photo" src='{% static 'img/home_soup.png' %}'/></div>
+        </div>
+      </div>
+      <div class="col-md-4 photo-four"><img class="mission-photo" src='{% static 'img/home_tea.png' %}'/></div>
+    </div>
+  </div>
+  </div>
+
+  <div class="testimonial-box">
+    <div id="testimonial-section-heading">
+      <p class="section-title">What Every Body’s Saying</p>
+    </div>
+
+  <div class="row">
+    <div class="col-md-1 no-pad"><a class="carousel-control-prev" href="#myCarousel" data-slide="prev"><img class="" src='{% static 'img/carousel_prev.png' %}'/></a></div>
+    <div class="col-md-10 no-pad">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="row">
+          <div class="col-md-12 no-pad">
+          </div>
+        </div>
+        <div class="carousel-inner">
+          <div class="active item">
+            <div class="row">
+              <div class="col-md-1 no-pad"></div>
+              <div class="col-md-1 no-pad">
+                <img class="circular-headshot" src='{% static 'img/testimonial-1.jpg' %}'/>
+              </div>
+              <div class="col-md-9 no-pad">
+                <div class="quote-block">
+                  <div class="user-quote">“I love my friends, but they have no clue what to do when it comes to eating right or dieting.
+                  Nutrifeedback set me up with an awesome nutritionist and now I’ve ﬁnally got a healthy kitchen.”
+                 </div>
+                 <br/>
+                 <div class="user-quote-name">Jessica Schweigart</div>
+                 </div>
+               </div>
+               <div class="col-md-1 no-pad"></div>
+               </div>
+             </div>
+             <div class="item">
+               <div class="row">
+                 <div class="col-md-1 no-pad"></div>
+                 <div class="col-md-1 no-pad">
+                   <img class="circular-headshot" src='{% static 'img/testimonial-2.jpg' %}'/>
+                 </div>
+                 <div class="col-md-9 no-pad">
+                   <div class="quote-block">
+                     <div class="user-quote">“Oh my god. Nutrifeedback is the best. I got delicious vegan meal recipes right away and it’s
+                       inspired me to start cooking again. I love this site”</div>
+                     <br/>
+                     <div class="user-quote-name">David Mueller</div>
+                   </div>
+                 </div>
+                 <div class="col-md-1 no-pad"></div>
+               </div>
+             </div>
+             <div class="item">
+               <div class="row">
+                 <div class="col-md-1 no-pad"></div>
+                 <div class="col-md-1 no-pad">
+                   <img class="circular-headshot" src='{% static 'img/testimonial-3.jpg' %}'/>
+                 </div>
+                 <div class="col-md-9 no-pad">
+                   <div class="quote-block">
+                     <div class="user-quote">“My workouts have been going a lot better after I got food tips from a nutritionist I found on
+                       Nutrifeedback. Tons more energy, and I’m ﬁnally hitting my ﬁtness goals.”</div>
+                     <br/>            <div class="user-quote-name">Sarah Hayes</div>
+                   </div>
+                 </div>
+                 <div class="col-md-1 no-pad"></div>
+               </div>
+             </div>
+             <div class="item">
+               <div class="row">
+                 <div class="col-md-1 no-pad"></div>
+                 <div class="col-md-1 no-pad">
+                   <img class="circular-headshot" src='{% static 'img/testimonial-4.jpg' %}'/>
+                 </div>
+                 <div class="col-md-9 no-pad">
+                   <div class="quote-block">
+                     <div class="user-quote">“Gluten and I are not friends AT ALL, but I’ve been able to ﬁnd things I like and can actually eat
+                       thanks to Nutrifeedback. Total life saver.”</div>
+                     <br/>
+                     <div class="user-quote-name">David Schreck</div>
+                   </div>
+                 </div>
+                 <div class="col-md-1 no-pad"></div>
+               </div>
+             </div>
+             <div class="item">
+               <div class="row">
+                 <div class="col-md-1 no-pad"></div>
+                 <div class="col-md-1 no-pad">
+                   <img class="circular-headshot" src='{% static 'img/testimonial-5.jpg' %}'/>
+                 </div>
+                 <div class="col-md-9 no-pad">
+                   <div class="quote-block">
+                     <div class="user-quote">“I’m gonna say it… I wouldn’t have ﬁt in my wedding dress if it weren’t for Nutrifeedback.”</div>
+                     <div class="user-quote-name">Danielle Berens</div>
+                     <br/>
+                   </div>
+                 </div>
+                 <div class="col-md-1 no-pad"></div>
+               </div>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-md-12 no-pad">
+               <div class="indicator">
+                 <ol class="carousel-indicators">
+                   <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                   <li data-target="#myCarousel" data-slide-to="1"></li>
+                   <li data-target="#myCarousel" data-slide-to="2"></li>
+                   <li data-target="#myCarousel" data-slide-to="3"></li>
+                   <li data-target="#myCarousel" data-slide-to="4"></li>
+                 </ol>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div class="col-md-1"><a class="carousel-control-next" href="#myCarousel" data-slide="next"><img class="" src='{% static 'img/carousel_next.png' %}'/></a></div>
      </div>
    </div>
-</div>
+
+    <div class="tagline-box">
+       <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8"><p class="tagline">Get the advice your body needs. Ask your ﬁrst question today.</p></div>
+        <div class="col-md-1"><a class="btn btn-primary btn-lg tagline-button" href="{% url 'registration_register' %}">Start Now</a></div>
+      </div>
+    </div>
+ </div>
 
 
 <script type='text/javascript'>
 $(document).ready(function(){
 $('.carousel').carousel({
-  interval: 2000 // in milliseconds
+  interval: 2500 // in milliseconds
 })
 
 });

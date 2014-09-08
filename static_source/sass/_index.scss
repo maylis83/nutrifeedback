@@ -42,6 +42,10 @@ img {
   font-family: "robotolight";
 }
 
+.how-works-icons {
+  padding-top: 15px;
+}
+
 .left-section-title {
   text-align: left;
   font-size: 36px;
@@ -60,13 +64,16 @@ img {
 }
 
 .step-desc {
-  margin-left: auto;
-  margin-right: auto;
+  //margin-left: auto;
+  //margin-right: auto;
   text-align: center;
   font-size: 18px;
   font-family: "robotoregular";
-  color: #B8B8B8
+  color: #333C4E;
   //width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
 }
 
 .step-img {

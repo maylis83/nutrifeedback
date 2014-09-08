@@ -6,9 +6,10 @@
       <div class="col-md-1"><a href="{% url 'index' %}" target="_blank"><img class="logo" src='{% static 'img/home_logo.png' %}'/></a></div>
       <div class="col-md-5"></div>
       {% if user.is_authenticated %}
-        <div class="col-md-2 no-pad">
+        <div class="col-md-3 no-pad">
           <div id="dropdown-block">
-            <a class="dropdown" href="#">Welcome, X{{ user.first_name }}X</a>
+            <a class="dropdown" href="#">Welcome, SomeReallyLongFirstName{{ user.first_name }} <img class="" src='{% static 'img/dropdown_triangle.png' %}'/></a>
+
             <ul class="dropdown-list">
               <li><a href="{% url 'auth_logout' %}">Logout</a></li>
               <li><a href="{% url 'survey' %}">Survey</a></li>
@@ -18,7 +19,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-1"><a class="btn btn-primary" id="header-sign-out-button" href="{% url 'auth_logout' %}">Sign Out</a></div>
+        <div class="col-md-1 no-pad"><a class="btn btn-primary" id="header-sign-out-button" href="{% url 'auth_logout' %}">Sign Out</a></div>
       {% else %}
         <div class="col-md-1 no-pad"><a class="btn btn-success" id="sign-in-button" href="{% url 'auth_login' %}">Sign In</a></div>
         <div class="col-md-1"><a class="btn btn-primary" id="header-start-button" href="{% url 'registration_register' %}">Start</a></div>

@@ -38,12 +38,13 @@ Nutrifeedback
 
 <div class="row no-pad">
 <div id="consultation-schedule-form-block">
-  <div class="col-md-4"">
+  <div class="col-md-5"">
     <div class="row">
       Date
     </div>
     <div class="row">
-      {{ form.date }}      <a href="javascript:void(0);" onclick="$.datepicker._showDatepicker($('#inputID')[0]);"><img id="calendar-trigger" src='{% static 'img/date.png' %}'/></a>
+      {{ form.date }}
+      <a href="javascript:void(0);" onclick="$.datepicker._showDatepicker($('#appt-calendar')[0]);"><img id="calendar-trigger" src='{% static 'img/date.png' %}'/></a>
     </div>
   </div>
   <div class="col-md-3" id="time-column">
@@ -59,7 +60,7 @@ Nutrifeedback
 </div>
 
 
-<input type="hidden" id="inputID"/>
+<input type="hidden" id="appt-calendar"/>
 
 <div id="consultation-sub-heading">In Person or Digital Consultation</div>
 
@@ -95,7 +96,7 @@ $.datepicker.formatDate('MM dd yy', d)
 "August 20 2014"
 */
 
-var num = {}
+var num = {};
 num["January"]   = "0";
 num["February"]  = "1";
 num["March"]     = "2";
@@ -110,10 +111,10 @@ num["November"]  = "10";
 num["January"]   = "11";
 
 $(document).ready(function(){
-    $('#inputID').datepicker({ dateFormat: "mm dd yy",
-                               minDate: 0 });
+    $('#appt-calendar').datepicker({ dateFormat: "mm dd yy", minDate: 0 });
 
-    $('#inputID').datepicker("option", {
+/*
+    $('#appt-calendar').datepicker("option", {
        onSelect: function(dateText, inst){
           date = dateText.match(/^(\d{2})\s(\d{2})\s(\d{4})/);
 
@@ -122,6 +123,15 @@ $(document).ready(function(){
           $("#id_date_year").val(parseInt(date[3]));
        }
     });
+*/
+
+
+    $('#appt-calendar').datepicker("option", {
+       onSelect: function(dateText, inst) {
+          populate_calendar_selects(dateText, inst, "id_date_month", "id_date_day", "id_date_year");
+       }
+    });
+
 
     $("#id_date_month, #id_date_year").click(function(){
         var month = $("#id_date_month :selected").text();
@@ -158,7 +168,7 @@ $(document).ready(function(){
               $("#id_date_day option[value='31']").remove();
               break;
         }
-})
+    });
 
     $(".consultation-date").click(function(){
         //console.log(this);

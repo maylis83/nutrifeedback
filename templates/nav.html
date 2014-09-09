@@ -2,9 +2,23 @@
 <div class="navbar-inner">
   <div class="container">
     <div class="row">
+      <div class="col-md-1">| ---01--- |</div>
+      <div class="col-md-1">| ---02--- |</div>
+      <div class="col-md-1">| ---03--- |</div>
+      <div class="col-md-1">| ---04--- |</div>
+      <div class="col-md-1">| ---05--- |</div>
+      <div class="col-md-1">| ---06--- |</div>
+      <div class="col-md-1">| ---07--- |</div>
+      <div class="col-md-1">| ---08--- |</div>
+      <div class="col-md-1">| ---09--- |</div>
+      <div class="col-md-1">| ---10--- |</div>
+      <div class="col-md-1">| ---11--- |</div>
+      <div class="col-md-1">| ---12--- |</div>
+    </div>
+    <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-1"><a href="{% url 'index' %}" target="_blank"><img class="logo" src='{% static 'img/home_logo.png' %}'/></a></div>
-      <div class="col-md-5"></div>
+      <div class="col-md-4"></div>
       {% if user.is_authenticated %}
         <div class="col-md-3 no-pad">
           <div id="dropdown-block">
@@ -25,7 +39,6 @@
         <div class="col-md-1 no-pad"><a class="btn btn-success" id="sign-in-button" href="{% url 'auth_login' %}">Sign In</a></div>
         <div class="col-md-1"><a class="btn btn-primary" id="header-start-button" href="{% url 'registration_register' %}">Start</a></div>
       {% endif %}
-      <div class="col-md-2"></div>
     </div>
   </div>
 </div>

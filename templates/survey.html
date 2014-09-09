@@ -93,6 +93,10 @@ $(document).ready(function(){
           populate_calendar_selects(dateText, inst, "id_dob_month", "id_dob_day", "id_dob_year");
        }
     });
+
+    $("#id_dob_month, #id_dob_year").click(function(){
+       set_month_length("id_dob_month", "id_dob_day", "id_dob_year");
+    });
 });
 </script>
 

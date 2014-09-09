@@ -134,40 +134,7 @@ $(document).ready(function(){
 
 
     $("#id_date_month, #id_date_year").click(function(){
-        var month = $("#id_date_month :selected").text();
-
-        // baseline is 31 days
-        if ($("#id_date_day option[value='29']").length == 0) {
-           $("#id_date_day").append('<option value="29">29</option>')
-        }
-
-        if ($("#id_date_day option[value='30']").length == 0) {
-           $("#id_date_day").append('<option value="30">30</option>')
-        }
-
-        if ($("#id_date_day option[value='31']").length == 0) {
-           $("#id_date_day").append('<option value="31">31</option>')
-        }
-
-        switch(month) {
-           case 'February':
-              $("#id_date_day option[value='31']").remove();
-              $("#id_date_day option[value='30']").remove();
-
-              var year = parseInt($("#id_date_year :selected").text());
-
-              // if not leap year, remove 29
-              if (!(((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0))) {
-                $("#id_date_day option[value='29']").remove();
-              }
-              break;
-           case 'April':
-           case 'June':
-           case 'September':
-           case 'November':
-              $("#id_date_day option[value='31']").remove();
-              break;
-        }
+       set_month_length("id_date_month", "id_date_day", "id_date_year");
     });
 
     $(".consultation-date").click(function(){
@@ -280,7 +247,6 @@ $(document).ready(function(){
            }
         }
     });
-
 });
 
 /*

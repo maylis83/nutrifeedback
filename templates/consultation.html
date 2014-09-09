@@ -118,13 +118,14 @@ Nutrifeedback
 </div>
 </div>
 
-<script src="//checkout.stripe.com/v2/checkout.js"></script>
+<script src="https://checkout.stripe.com/v2/checkout.js"></script>
 
 <script>
  chargeCustomer = function(amount, nutritionist, consultation){
    $("<form method='post' action='{% url "charge_customer" %}'>{% csrf_token %}<input name='amount' value=" + amount +"><input name='nutritionist' value=" + nutritionist +"><input name='consultation' value=" + consultation +"></form>").appendTo("body").submit();
  }
 </script>
+
 <script>
 {% if user_has_stripe_account == True %}
    document.getElementById('pay-button').addEventListener('click', function(e) {

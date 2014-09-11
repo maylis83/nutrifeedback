@@ -39,19 +39,19 @@ Nutrifeedback
           <div class="row form-field-label">{{ form.dob.label }}</div>
           <div class="row">{{ form.dob }}<a href="javascript:void(0);" onclick="$.datepicker._showDatepicker($('#dob-input')[0]);"><img id="dob-calendar-trigger" src='{% static 'img/date.png' %}'/></a></div>
 
-          <div class="col-md-1 no-pad">
+          <div class="col-xs-1 no-pad">
             <div class="row">{{ form.weight.errors }}</div>
             <div class="row form-field-label">{{ form.weight.label }}</div>
             <div class="row">{{ form.weight }}</div>
           </div>
 
-          <div class="col-md-1" id="height-padding">
+          <div class="col-xs-1" id="height-padding">
             <div class="row">{{ form.height.errors }}</div>
             <div class="row form-field-label">{{ form.height.label }}</div>
             <div class="row">{{ form.height }}</div>
           </div>
 
-          <div class="col-md-10"></div>
+          <div class="col-xs-10"></div>
 
           <div class="row">{{ form.exercise_freq.errors }}</div>
           <div class="row form-field-label">{{ form.exercise_freq.label }}</div>

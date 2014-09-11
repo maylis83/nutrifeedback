@@ -10,9 +10,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{%block title%} {%endblock title%}</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width" initial-scale=1.0>
 
-    {% load compressed %}
+    <!--
+    <meta name="viewport" content="width=device-width" initial-scale=1.0>
+    -->
+
+   {% load compressed %}
     {% compressed_css 'screen' %}
     {% compressed_js 'vendor' %}
     {% block extra_head %}

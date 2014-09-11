@@ -324,16 +324,17 @@ img {
 
 #sign-in-button {
   float: right;
-  margin-right: 0px !important;
+  //margin-right: 0px !important;
   margin-top: 38px;
   width: 89px;
   font-family: "robotomedium";
   font-size: 16px;
+  margin-right: 10px !important;
 }
 
 #header-sign-out-button {
   float: right;
-  margin-right: -75px !important;
+  margin-right: 109px !important;
   margin-top: 38px;
   width: 89px;
   background-color: #63C49A;
@@ -343,9 +344,8 @@ img {
 }
 
 #header-start-button {
-  float: left;
+  float: right;
   width: 89px;
-  margin-left: 0px !important;
   margin-top: 38px;
   font-family: "robotomedium";
   font-size: 16px;

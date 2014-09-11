@@ -1,6 +1,6 @@
 @import "compass/css3/background-size";
 @import "compass/layout.scss";
-   @include sticky-footer(88px, "#main", "#main-footer", "#footer");
+@include sticky-footer(0px, "#main", "#main-footer", "#footer");
 
 @import "index";
 @import "survey";
@@ -16,6 +16,7 @@
 @import "nav";
 @import "footer";
 @import "typography";
+
 
 /* uncomment for bootstrap */
 $bootstrap-sass-asset-helper: false;

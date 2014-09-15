@@ -1,10 +1,22 @@
 .container
 {
-  width: 1600px !important;
+  width: 1040px !important;
+  min-width: 1040px !important;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  padding-left:: 0px !important;
+  padding-right:0px !important;
 }
 
 body {
-  width: 100%;
+  min-width:1040px !important;
+}
+
+.row {
+  // margin-left: 0px !important;
+  // margin-right:0px !important;
 }
 
 img {

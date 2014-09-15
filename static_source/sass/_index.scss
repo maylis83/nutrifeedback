@@ -1,11 +1,15 @@
-.container
-{
+
+
+.container {
   width: 1040px !important;
   min-width: 1040px !important;
   margin: 0 auto;
 }
 
+
 .container-fluid {
+  min-width:1040px;
+
   padding-left:: 0px !important;
   padding-right:0px !important;
 }
@@ -14,9 +18,11 @@ body {
   min-width:1040px !important;
 }
 
+
 .row {
   // margin-left: 0px !important;
  margin-right:0px !important;
+ 
 }
 
 img {

@@ -16,8 +16,9 @@
     -->
 
    {% load compressed %}
+   {% compressed_js 'vendor' %}
     {% compressed_css 'screen' %}
-    {% compressed_js 'vendor' %}
+    
     {% block extra_head %}
     {% endblock extra_head %}
   </head>

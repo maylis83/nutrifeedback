@@ -1,10 +1,60 @@
 {% load static from staticfiles %}
 <div class="navbar-inner">
   <div class="container">
+    <div class="clear">
+      <a href="{% url 'index' %}" ><img class="logo" src='{% static 'img/home_logo.png' %}'/></a>
+      {% if user.is_authenticated %}
+        <a class="btn btn-primary" id="header-sign-out-button" href="{% url 'auth_logout' %}">Sign Out</a>
+        <div id="dropdown-block">
+          <a class="dropdown" href="#">Welcome, SomeReallyLongFirstName{{ user.first_name }} <img class="" src='{% static 'img/dropdown_triangle.png' %}'/></a>
+
+          <ul class="dropdown-list">
+            <li><a href="{% url 'auth_logout' %}">Logout</a></li>
+            <li><a href="{% url 'survey' %}">Survey</a></li>
+            <li><a href="{% url 'my-nutritionists' %}">My Nutritionists</a></li>
+            <li><a href="{% url 'upcoming-consultations' %}">Upcoming Consultations</a></li>
+            <li><a href="{% url 'recommended-nutritionists' %}">Recommended Nutritionists</a></li>
+          </ul>
+        </div>
+      {% else %}
+        <a class="btn btn-primary" id="header-start-button" href="{% url 'registration_register' %}">Start</a>
+        <a class="btn btn-success" id="sign-in-button" href="{% url 'auth_login' %}">Sign In</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $("a").click(function(){
+        console.log(this);
+        $(this).next().toggle();
+    });
+});
+</script>
+
+<!--
+    <div class="row">
+      <div class="col-md-1">| ---01--- |</div>
+      <div class="col-md-1">| ---02--- |</div>
+      <div class="col-md-1">| ---03--- |</div>
+      <div class="col-md-1">| ---04--- |</div>
+      <div class="col-md-1">| ---05--- |</div>
+      <div class="col-md-1">| ---06--- |</div>
+      <div class="col-md-1">| ---07--- |</div>
+      <div class="col-md-1">| ---08--- |</div>
+      <div class="col-md-1">| ---09--- |</div>
+      <div class="col-md-1">| ---10--- |</div>
+      <div class="col-md-1">| ---11--- |</div>
+      <div class="col-md-1">| ---12--- |</div>
+    </div>
+ -->
+
+<!-- -
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-1"><a href="{% url 'index' %}" target="_blank"><img class="logo" src='{% static 'img/home_logo.png' %}'/></a></div>
-      <div class="col-md-5"></div>
+      <div class="col-md-4"></div>
       {% if user.is_authenticated %}
         <div class="col-md-3 no-pad">
           <div id="dropdown-block">
@@ -20,20 +70,10 @@
           </div>
         </div>
         <div class="col-md-1 no-pad"><a class="btn btn-primary" id="header-sign-out-button" href="{% url 'auth_logout' %}">Sign Out</a></div>
+
       {% else %}
         <div class="col-md-1 no-pad"><a class="btn btn-success" id="sign-in-button" href="{% url 'auth_login' %}">Sign In</a></div>
         <div class="col-md-1"><a class="btn btn-primary" id="header-start-button" href="{% url 'registration_register' %}">Start</a></div>
       {% endif %}
-      <div class="col-md-2"></div>
-    </div>
-  </div>
-</div>
 
-<script>
-$(document).ready(function(){
-    $("a").click(function(){
-        console.log(this);
-        $(this).next().toggle();
-    });
-});
-</script>
+ -->

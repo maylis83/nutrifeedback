@@ -9,8 +9,8 @@ Nutrifeedback
 <div class="outer-canvas">
   <div class="container">
   <div class="row line-no-pad">
-    <div class="col-md-2 no-pad"></div>
-    <div class="col-md-1 no-pad">
+    <div class="col-xs-2 no-pad"></div>
+    <div class="col-xs-1 no-pad">
       <div class="top-spacer"><button class="back-button" onclick="history.back()">< BACK</button></div>
     </div>
   </div>
@@ -30,10 +30,10 @@ Nutrifeedback
       <div class="profile-divider-line"></div>
       <div id="nutritionist-block-margin">
         <div class="row">
-          <div class="col-md-2">
+          <div class="col-xs-2">
             <img class="circular-headshot" id="recommended-headshot" src="{{ nutritionist.headshot.url }}">
           </div>
-          <div class="col-md-10 no-pad">
+          <div class="col-xs-10 no-pad">
             <div class="row">
               <div id="recommended-name">
                 {{ nutritionist.first_name }} {{ nutritionist.last_name }},&nbsp
@@ -59,34 +59,34 @@ Nutrifeedback
             </div>
             <div class="consultation-details-block">
             <div class="row consultation-details-spacer" id="">
-              <div class="col-md-1 no-pad">
+              <div class="col-xs-1 no-pad">
                 <img src='{% static 'img/date.png' %}'/>
               </div>
-              <div class="col-md-6 no-pad">
+              <div class="col-xs-6 no-pad">
                 <div class="consultation-details">{{ consultation.date }}</div>
               </div>
             </div>
             <div class="row consultation-details-spacer" id="">
-              <div class="col-md-1 no-pad">
+              <div class="col-xs-1 no-pad">
                 <img src='{% static 'img/time.png' %}'/>
               </div>
-              <div class="col-md-11 no-pad">
+              <div class="col-xs-11 no-pad">
                 <div class="consultation-details">{{ consultation.get_time_display }}</div>
               </div>
             </div>
             <div class="row consultation-details-spacer" id="">
-              <div class="col-md-1 no-pad">
+              <div class="col-xs-1 no-pad">
                 <img src='{% static 'img/pin.png' %}'/>
               </div>
-              <div class="col-md-11 no-pad">
+              <div class="col-xs-11 no-pad">
                <div class="consultation-details">{{ nutritionist.address }}. {{ nutritionist.city }}, {{ nutritionist.state }} {{ nutritionist.zip }}</div>
               </div>
             </div>
             <div class="row consultation-details-spacer" id="">
-              <div class="col-md-1 no-pad">
+              <div class="col-xs-1 no-pad">
                 <img src='{% static 'img/skype.png' %}'/>
               </div>
-              <div class="col-md-11 no-pad">
+              <div class="col-xs-11 no-pad">
                 <div class="consultation-details">{{ nutritionist.skype_name }}</div>
               </div>
             </div>
@@ -94,15 +94,15 @@ Nutrifeedback
 
             <div class="row">
 
-<!--              <div class="col-md-4 no-pad">
+<!--              <div class="col-xs-4 no-pad">
               <a class="btn btn-primary no-pad" id="message-reschedule" href="{% url 'nutritionist' 1 %}">Message to Reschedule</a>
             </div>
  -->
-             <div class="col-md-4 no-pad">
+             <div class="col-xs-4 no-pad">
                <a class="btn btn-primary" id="pay-button" href="#">Pay</a>
             </div>
             <div class="row">
-              <div class="col-md-12 no-pad">
+              <div class="col-xs-12 no-pad">
                 </br>AVAILABLE</br>
                 {% include 'snippets/availability-table.html' %}
               </div>
@@ -118,13 +118,14 @@ Nutrifeedback
 </div>
 </div>
 
-<script src="//checkout.stripe.com/v2/checkout.js"></script>
+<script src="https://checkout.stripe.com/v2/checkout.js"></script>
 
 <script>
  chargeCustomer = function(amount, nutritionist, consultation){
    $("<form method='post' action='{% url "charge_customer" %}'>{% csrf_token %}<input name='amount' value=" + amount +"><input name='nutritionist' value=" + nutritionist +"><input name='consultation' value=" + consultation +"></form>").appendTo("body").submit();
  }
 </script>
+
 <script>
 {% if user_has_stripe_account == True %}
    document.getElementById('pay-button').addEventListener('click', function(e) {

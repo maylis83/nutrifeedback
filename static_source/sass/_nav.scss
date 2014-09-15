@@ -1,6 +1,17 @@
+.clear
+{
+  clear: both;
+  margin: 0 auto;
+}
+
+.nav-bar
+{
+}
+
+
 .logo
 {
-  //margin-left: 75px;
+  // margin-left: 99px;
   max-width: none;
 }
 
@@ -13,13 +24,17 @@ ul li a {
 
 #dropdown-block {
   margin-top: 47px;
+  display: inline-block;
+  margin-right: 15px;
+  float: right;
 }
 
 .dropdown {
   font-size: 16px;
   font-family: "robotobold";
   color: #43ACD0;
-  float: left;
+  //float: left;
+  display: inline-block;
 }
 
 .dropdown-list {

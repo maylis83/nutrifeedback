@@ -9,8 +9,8 @@ Nutrifeedback
 <div class="outer-canvas">
   <div class="container">
       <div class="row line-no-pad">
-        <div class="col-md-2 no-pad"></div>
-        <div class="col-md-1 no-pad">
+        <div class="col-xs-2 no-pad"></div>
+        <div class="col-xs-1 no-pad">
           <div class="top-spacer"><button class="back-button" onclick="history.back()">< BACK</button></div>
         </div>
       </div>
@@ -30,10 +30,10 @@ Nutrifeedback
       <div class="profile-divider-line"></div>
       <div id="nutritionist-block-margin">
         <div class="row">
-          <div class="col-md-2">
+          <div class="col-xs-2">
             <img class="circular-headshot" id="recommended-headshot" src="{{ nutritionist.headshot.url }}">
           </div>
-          <div class="col-md-10 no-pad">
+          <div class="col-xs-10 no-pad">
             <div class="row">
               <div id="recommended-name">
                 {{ nutritionist.first_name }} {{ nutritionist.last_name }},&nbsp
@@ -55,23 +55,23 @@ Nutrifeedback
             <div class="row">
 
               <!--
-              <div class="col-md-4 no-pad">
+              <div class="col-xs-4 no-pad">
                 <a class="btn btn-primary no-pad" id="send-message" href="{% url 'nutritionist' 1 %}">Send Message</a>
                 <p class="payment-notes no-pad">User must pay $10/month to message nutritionists.</p>
               </div>
               -->
 
-              <div class="col-md-4 no-pad" id="schedule-consultation-button-block">
+              <div class="col-xs-4 no-pad" id="schedule-consultation-button-block">
                 <a class="btn btn-primary no-pad" id="schedule-consultation" href="{% url 'schedule-consultation' nutritionist.id %}">Schedule Consultation</a>
                 <p class="payment-notes no-pad"> $100 to schedule consultation.</p>
               </div>
             </div>
           <div class="profile-divider-line"></div>
           <div class="row">
-            <div class="col-md-1 no-pad">
+            <div class="col-xs-1 no-pad">
               <img id="credentials-icon" src='{% static 'img/credentials.png' %}'/>
             </div>
-            <div class="col-md-1 no-pad">
+            <div class="col-xs-1 no-pad">
               <div class="profile-list-heading one-col-profile-list-heading">CREDENTIALS</div>
             </div>
           </div>
@@ -99,12 +99,12 @@ Nutrifeedback
          {% endfor %}
          <div class="profile-divider-line"></div>
          <div class="row">
-           <div class="col-md-6">
+           <div class="col-xs-6">
              <div class="row">
-               <div class="col-md-1 no-pad">
+               <div class="col-xs-1 no-pad">
                  <img id="demographics-icon" src='{% static 'img/demographics.png' %}'/>
                </div>
-               <div class="col-md-1 no-pad">
+               <div class="col-xs-1 no-pad">
                  <div class="profile-list-heading two-col-profile-list-heading">DEMOGRAPHICS SERVED</div>
                </div>
              </div>
@@ -114,12 +114,12 @@ Nutrifeedback
               </div>
             {% endfor %}
           </div>
-          <div class="col-md-6">
+          <div class="col-xs-6">
             <div class="row">
-              <div class="col-md-1 no-pad">
+              <div class="col-xs-1 no-pad">
                 <img id="specialties-icon" src='{% static 'img/specialties.png' %}'/>
               </div>
-              <div class="col-md-1 no-pad">
+              <div class="col-xs-1 no-pad">
                 <div class="profile-list-heading two-col-profile-list-heading">SPECIALTIES</div>
               </div>
             </div>

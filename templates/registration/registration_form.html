@@ -13,6 +13,24 @@
       <div class="registration-label">
       <table>
         <tr>
+          <td> {{ form.first_name.label_tag }}</td>
+        </tr>
+        <tr>
+          <td> {{ form.first_name }}</td>
+        </tr>
+        <tr>
+          <td> {{ form.first_name.errors }}</td>
+        </tr>
+        <tr>
+          <td> {{ form.last_name.label_tag }}</td>
+        </tr>
+        <tr>
+          <td> {{ form.last_name }}</td>
+        </tr>
+        <tr>
+          <td> {{ form.last_name.errors }}</td>
+        </tr>
+        <tr>
           <td> {{ form.email.label_tag }}</td>
         </tr>
         <tr>
@@ -40,7 +58,7 @@
           <td> {{ form.password2.errors }}</td>
         </tr>
         <tr>
-          <td>{{ form.tos }} {{ form.tos.label_tag }}</td>
+          <td> {{ form.tos }} &nbsp {{ form.tos.label_tag }}</td>
         </tr>
         <tr>
           <td> {{ form.tos.errors }}</td>

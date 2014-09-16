@@ -49,13 +49,12 @@ Nutrifeedback
 
     <center><a class="btn btn-primary wide-button button-style" href="
       {% if user.is_authenticated %}
-      {% url 'recommended-nutritionists' %}"
+        {% url 'recommended-nutritionists' %}"
       {% else %}
-      {% url 'registration_register' %}"
+        {% url 'registration_register' %}"
       {% endif %}
       >Start Now</a></center>
     </div>
-
   </br>
 
     <div class="doit">

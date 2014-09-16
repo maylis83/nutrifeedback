@@ -12,6 +12,11 @@ class RegistrationForm(forms.Form):
     """
     username = forms.CharField(widget=forms.HiddenInput,required=False)
 
+    first_name = forms.CharField(widget=forms.TextInput, required=True,
+                                label=_("First Name"))
+    last_name = forms.CharField(widget=forms.TextInput, required=True,
+                                label=_("Last Name"))
+
     email = forms.EmailField(label=_("E-mail"), required=True)
     password1 = forms.CharField(widget=forms.PasswordInput,
                                 label=_("Password"))

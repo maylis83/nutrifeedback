@@ -6,7 +6,7 @@
       {% if user.is_authenticated %}
         <a class="btn btn-primary" id="header-sign-out-button" href="{% url 'auth_logout' %}">Sign Out</a>
         <div id="dropdown-block">
-          <a class="dropdown" href="#">Welcome, SomeReallyLongFirstName{{ user.first_name }} <img class="" src='{% static 'img/dropdown_triangle.png' %}'/></a>
+          <a class="dropdown" href="#">Welcome, {{ user.first_name|title }} <img class="" src='{% static 'img/dropdown_triangle.png' %}'/></a>
 
           <ul class="dropdown-list">
             <li><a href="{% url 'auth_logout' %}">Logout</a></li>

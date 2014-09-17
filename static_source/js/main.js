@@ -7,8 +7,7 @@ function populate_calendar_selects(dateText, inst, month_id, day_id, year_id) {
    $('#' + year_id).val(parseInt(date[3]));
 }
 
-function set_month_length(month_id, day_id, year_id)
-{
+function set_month_length(month_id, day_id, year_id) {
     var month = $("#" + month_id + " :selected").text();
 
     // baseline is 31 days

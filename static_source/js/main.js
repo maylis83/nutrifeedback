@@ -1,4 +1,4 @@
-$(document).ready(function(){
+//$(document).ready(function(){
   function populate_calendar_selects(dateText, inst, month_id, day_id, year_id) {
      console.log("populate");
      date = dateText.match(/^(\d{2})\s(\d{2})\s(\d{4})/);
@@ -44,4 +44,4 @@ $(document).ready(function(){
             break;
       }
     }
-}
+//}

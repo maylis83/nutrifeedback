@@ -11,7 +11,7 @@
 
 .logo
 {
-  // margin-left: 99px;
+  margin-left: 85px;
   max-width: none;
 }
 
@@ -50,6 +50,7 @@ ul li a {
   padding: 5px;
   position: absolute;
   margin-top: 20px;
+  z-index: 100;
 }
 
 .dropdown-list li a {

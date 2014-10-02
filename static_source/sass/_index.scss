@@ -122,10 +122,11 @@ img {
 }
 
 .tagline {
+
   text-align: left;
   font-size: 24px;
   color: #FFFFFF;
-  margin-top: 45px;
+  // margin-top: 25px;
   padding-left: 20px;
   font-family: "robotoregular";
 }
@@ -172,12 +173,12 @@ img {
 .tagline-box {
   min-height: 120px;
   //width: 100%;
-  background-color: #40b985;
+  background-color: #40b985 !important;
   display: block;
 }
 
 .tagline-button {
-  margin-top: 29px;
+  margin-top: -5px;
   background-color: #FFFFFF !important;
   color: #5d6964 !important;
   //border: none;
@@ -185,7 +186,7 @@ img {
   font-family: "robotomedium";
   font-size: 16px;
   width: 160px;
-  height: 60px;
+  height: 50px;
   padding-top: 16px !important;
 }
 
@@ -241,13 +242,14 @@ img {
 .testimonial-box {
   height: 395px;
   //background-color: #999999;
-  padding-bottom: 130px;
+  // padding-bottom: 130px;
   padding-top: 60px;
   width: 1060px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding-left: 50px;
+  margin-bottom: 35px;
 }
 
 .splash-box {
@@ -383,4 +385,9 @@ img {
 
 .width-100 {
   width: 100%;
+}
+
+.push {
+  background-color:#40B985 !important;
+  height:120px !important;
 }

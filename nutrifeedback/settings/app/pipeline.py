@@ -1,6 +1,8 @@
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 #STATICFILES_STORAGE = 'util.gzipstorage.GZIPCachedStorage'
 
+PIPELINE_DISABLE_WRAPPER = True
+
 PIPELINE_CSS = {
     'screen': {
         'source_filenames': (

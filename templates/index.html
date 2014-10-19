@@ -49,9 +49,9 @@ Nutrifeedback
 
     <center><a class="btn btn-primary wide-button button-style" href="
       {% if user.is_authenticated %}
-        {% url 'recommended-nutritionists' %}"
+      {% url 'recommended-nutritionists' %}"
       {% else %}
-        {% url 'registration_register' %}"
+      {% url 'registration_register' %}"
       {% endif %}
       >Start Now</a></center>
     </div>
@@ -201,12 +201,14 @@ Nutrifeedback
                      </div>
                    </div>
                  </div>
-                 <div class="col-xs-1"><a class="carousel-control-next" href="#myCarousel" data-slide="next"><img class="" src='{% static 'img/carousel_next.png' %}'/></a></div>
-               </div>
-             </div>
+                 <div class="col-xs-1">
+                  <a class="carousel-control-next" href="#myCarousel" data-slide="next"><img class="" src='{% static 'img/carousel_next.png' %}'/></a>
+                </div>
+              </div>
+            </div>
 
-             <div class="tagline-box">
-              <div class="container">
+            <div class="tagline-box" style=''>
+              <div class="container" style=''>
                <div class="row">
                  <div class="col-xs-9"><p class="tagline">Get the advice your body needs. Ask your ﬁrst question today.</p></div>
                  <div class="col-xs-3"><a class="btn btn-primary btn-lg tagline-button" style=float:right;" href="
@@ -215,22 +217,24 @@ Nutrifeedback
                    {% else %}
                    {% url 'registration_register' %}"
                    {% endif %}
-                   >Start Now</a></div>
+                   >Find your nutritionist</a></div>
                  </div>
                </div>
              </div>
+
+
            </div>
          </div>
        </div>
 
        <script type='text/javascript'>
-        $(document).ready(function(){
+       $(document).ready(function(){
         $('.carousel').carousel({
         interval: 2500 // in milliseconds
       })
 
-    });
-  </script>
+      });
+       </script>
 
   <!--
   Food For Thought

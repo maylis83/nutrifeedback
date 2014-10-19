@@ -177,9 +177,12 @@ class Availability(TimeStampedModel):
 
 class HealthSurvey(TimeStampedModel):
    GENDER = (('male', 'Male'), ('female', 'Female'))
-   EXERCISE_FREQ = [(str(i),str(i)) for i in range(26)]
-   HEALTH_GOALS = (('dummy','dummy'),)
-   DIETARY_RESTRICTIONS = (('dummy','dummy'),)
+   EXERCISE_FREQ = [(str(i),str(i)) for i in range(16)]
+   HEALTH_GOALS = (('dummy','dummy'),('weight_management', 'Weight Management'), ('pregnancy', 'Pregnancy'), ('eating_disorder','Eating Disorder'),
+    ('digestive_or_allergy_issue','Digestive or Allergy Issue'),('athletic_performance','Athletic Performance'),
+     ('fatigue_or_stress_management','Fatigue or Stress Management'), ('just_being_more_healthy','Just Being More Healthy'))
+   DIETARY_RESTRICTIONS = (('dummy','dummy'),('none','None'), ('gluten_free','Gluten Free'),('vegetarian','Vegetarian'),('vegan','Vergan'),
+    ('dairy_free','Dairy Free'),('low_sodium','Low Sodium'),('kosher','Kosher'), ('halal','Halal'), ('organic','Organic'))
 
    gender = models.CharField(max_length=10, choices=GENDER, verbose_name='gender')
    dob = models.DateField(verbose_name='When is your date of birth?')

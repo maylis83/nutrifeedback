@@ -317,3 +317,19 @@ def email_nutritionist(request, nutritionist_id, consultation_id):
    msg.attach_alternative(html_content, "text/html")
    #msg.content_subtype = "html" # with this gmail shows plain_body, link is clickable. Yahoo mail shows plain_body, link is not clickable
    msg.send()
+
+@render_to('about.html')
+def about(request):
+    return {}
+
+@render_to('terms.html')
+def terms(request):
+    return {}
+
+@render_to('privacy.html')
+def privacy(request):
+    return {}
+
+@render_to('contact.html')
+def contact(request):
+    return {}

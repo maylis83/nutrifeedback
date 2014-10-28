@@ -19,6 +19,10 @@ urlpatterns = patterns('app.views',
     url(r'^consultation/(?P<nutritionist_id>\d+)/(?P<consultation_id>\d+)/$', 'consultation', name='consultation'),
     url(r'^upcoming-consultations', 'upcoming_consultations', name='upcoming-consultations'),
     url(r'^my-nutritionists', 'my_nutritionists', name='my-nutritionists'),
+    url(r'^about', 'about', name='about'),
+    url(r'^terms', 'terms', name='terms'),
+    url(r'^privacy', 'privacy', name='privacy'),
+    url(r'^contact', 'contact', name='contact'),
 )
 
 def custom_logout(request):
